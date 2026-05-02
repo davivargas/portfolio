@@ -1,17 +1,17 @@
 interface SectionHeadingProps {
   eyebrow: string;
   title: string;
-  description?: string;
+  id?: string;
 }
 
-export const SectionHeading = ({ eyebrow, title, description }: SectionHeadingProps) => (
-  <div className="max-w-2xl mb-12">
-    <p className="font-mono text-sm text-primary mb-2">{eyebrow}</p>
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+export const SectionHeading = ({ eyebrow, title }: SectionHeadingProps) => (
+  <div className="mb-10">
+    <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-2">
+      {eyebrow}
+    </p>
+    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
       {title}
+      <span className="text-highlight">.</span>
     </h2>
-    {description && (
-      <p className="text-base sm:text-lg text-muted-foreground">{description}</p>
-    )}
   </div>
 );
