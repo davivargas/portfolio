@@ -1,50 +1,38 @@
 import { SectionHeading } from "../SectionHeading";
-import { Card } from "@/components/ui/card";
 
 const skillGroups = [
-  {
-    category: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "Go", "SQL"],
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Next.js", "Vite", "Tailwind", "Framer Motion", "Radix UI"],
-  },
-  {
-    category: "Backend",
-    items: ["Node", "tRPC", "GraphQL", "PostgreSQL", "Redis", "Edge Functions"],
-  },
-  {
-    category: "Tooling & Cloud",
-    items: ["Vercel", "AWS", "Docker", "GitHub Actions", "Playwright", "Vitest"],
-  },
+  { category: "Languages", items: ["TypeScript", "JavaScript", "Python", "Go", "SQL"] },
+  { category: "Frontend", items: ["React", "Next.js", "Vite", "Tailwind", "Framer Motion", "Radix UI"] },
+  { category: "Backend", items: ["Node", "tRPC", "GraphQL", "PostgreSQL", "Redis", "Edge Functions"] },
+  { category: "Tooling", items: ["Vercel", "AWS", "Docker", "GitHub Actions", "Playwright", "Vitest"] },
 ];
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-24 sm:py-32">
-      <div className="container">
-        <SectionHeading
-          eyebrow="03 / Skills"
-          title="My toolkit."
-          description="The tools I reach for most often — but I'm always picking up something new."
-        />
+    <section id="skills" className="scroll-mt-24 py-16 lg:py-24">
+      <SectionHeading eyebrow="04 / Skills" title="My toolkit" />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {skillGroups.map((g) => (
-            <Card key={g.category} className="p-6 shadow-card hover:shadow-elegant transition-smooth bg-card/80 backdrop-blur">
-              <h3 className="font-mono text-sm text-primary mb-4">{g.category}</h3>
-              <ul className="space-y-2">
-                {g.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/60" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          ))}
-        </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {skillGroups.map((g) => (
+          <div
+            key={g.category}
+            className="rounded-xl border border-border bg-card/60 backdrop-blur p-5 hover:border-primary/40 hover:shadow-card transition-smooth"
+          >
+            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-3">
+              {g.category}
+            </h3>
+            <ul className="flex flex-wrap gap-2">
+              {g.items.map((item) => (
+                <li
+                  key={item}
+                  className="font-mono text-xs px-2.5 py-1 rounded-md bg-accent text-accent-foreground"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );
