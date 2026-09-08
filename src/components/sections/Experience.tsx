@@ -4,40 +4,49 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    period: "2023 — Present",
-    role: "Senior Software Engineer",
-    company: "Northwind Labs",
+    period: "Aug 2026\nto Present",
+    role: "Software Developer (Contract)",
+    company: "Sprinter Delivery",
     href: "#",
     description:
-      "Lead frontend architecture for a real-time analytics platform serving 200k+ daily users. Drive performance, design-system, and DX initiatives.",
-    tags: ["React", "TypeScript", "GraphQL", "Design Systems"],
+      "Contracted by a courier company to replace its Excel and VBA operations system. Built the driver proof-of-delivery app that works a full shift offline, with the admin portal designed and next to build.",
+    tags: ["TypeScript", "React", "PWA", "Supabase", "PostgreSQL", "IndexedDB", "Playwright", "GitHub Actions"],
   },
   {
-    period: "2021 — 2023",
-    role: "Software Engineer",
-    company: "Aperture Studio",
+    period: "May 2026\nto Aug 2026",
+    role: "Software Development Intern",
+    company: "Zip",
     href: "#",
     description:
-      "Built customer-facing dashboards and internal tooling. Owned the migration from REST to tRPC and shipped a component library used across 6 products.",
-    tags: ["Next.js", "tRPC", "Postgres", "Tailwind"],
+      "Re-architected an internal operations dashboard into a PostgreSQL-backed data platform with scheduled Asana and Linear ingestion, self-healing health checks, and a family of React analytics views, then handed it over with full operator runbooks.",
+    tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "Prisma", "Redis", "GraphQL", "Docker", "Claude Integration"],
   },
   {
-    period: "2019 — 2021",
-    role: "Frontend Developer",
-    company: "Riverbend Agency",
+    period: "May 2025\nto Dec 2025",
+    role: "Software Engineer in Test Intern",
+    company: "Insurance Corporation of British Columbia (ICBC)",
     href: "#",
     description:
-      "Crafted bespoke marketing sites and web apps for design-forward clients with a focus on motion and accessibility.",
-    tags: ["JavaScript", "Framer Motion", "WebGL", "A11y"],
+      "Worked on automated testing and internal tooling for a large enterprise platform migration to cloud, contributing to reliable release workflows with developers and product teams.",
+    tags: ["JavaScript", "Python", "Jira", "CI/CD", "TestCafe", "Cucumber"],
   },
   {
-    period: "2018 — 2019",
-    role: "Junior Developer",
-    company: "Foothold Inc.",
+    period: "Oct 2020\nto Mar 2025",
+    role: "Ballast Control Operator (BCO)",
+    company: "Petrobras",
     href: "#",
     description:
-      "First role out of school. Helped maintain a Rails monolith and slowly introduced React for new features.",
-    tags: ["Rails", "React", "PostgreSQL"],
+      "Worked in a safety critical offshore environment, coordinating operations, supervising a small team, and using automation to improve workflows and reduce manual work.",
+    tags: ["Python", "VBA", "Power BI", "SAP", "PI-ProcessBook", "Operations", "Leadership"],
+  },
+  {
+    period: "Dec 2019\nto Sep 2020",
+    role: "Technical Finance Intern",
+    company: "LiftBank",
+    href: "#",
+    description:
+      "Built internal automation and reporting tools to process financial data, reduce repetitive work, and support operational efficiency in a startup environment.",
+    tags: ["Python", "VBA", "Power BI", "Selenium", "Excel", "Reporting"],
   },
 ];
 
