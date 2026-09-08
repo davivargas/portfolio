@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SectionHeading } from "../SectionHeading";
 
 export const About = () => {
@@ -21,6 +23,15 @@ export const About = () => {
           When I'm not at the keyboard, you'll probably find me spending quality time with my family, snowboarding or hiking around 
           British Columbia.
         </p>
+        {/* <div className="flex justify-start pt-4">
+          <Button asChild variant="outline" className="rounded-full">
+            <a href="#projects">
+              View Projects
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </Button>
+        </div> */}
+
         {/* <p>
           I'm a software engineer based in <span className="text-foreground">Brooklyn, NY</span>. I
           started writing code in high school to mod video games, and somewhere along the way it
