@@ -40,6 +40,8 @@ export const Sidebar = () => {
           <li key={label}>
             <a
               href={href}
+              target="_blank"
+              rel="noreferrer"
               aria-label={label}
               className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-smooth inline-block"
             >
