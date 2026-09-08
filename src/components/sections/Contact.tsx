@@ -8,15 +8,14 @@ export const Contact = () => {
       <SectionHeading eyebrow="05 / Contact" title="Let's build something" />
 
       <p className="text-base text-muted-foreground leading-relaxed mb-6">
-        I'm currently exploring new opportunities and always happy to chat with folks building
-        thoughtful products. The fastest way to reach me is email.
+        I'm currently exploring new opportunities and always happy to chat with other people who are also building real solutions. The fastest way to reach me is email.
       </p>
 
       <div className="flex flex-wrap items-center gap-3">
         <Button asChild size="lg" className="rounded-full shadow-elegant">
-          <a href="mailto:hello@alexcarter.dev">
+          <a href="mailto:davi.vargas7@gmail.com">
             <Mail className="h-4 w-4" />
-            hello@alexcarter.dev
+            davi.vargas7@gmail.com
           </a>
         </Button>
         <Button asChild variant="outline" size="lg" className="rounded-full">
