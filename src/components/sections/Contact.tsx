@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { EmailOptions } from "@/components/EmailOptions";
 import { SectionHeading } from "../SectionHeading";
 import { Button } from "@/components/ui/button";
 
@@ -12,12 +13,12 @@ export const Contact = () => {
       </p>
 
       <div className="flex flex-wrap items-center gap-3">
-        <Button asChild size="lg" className="rounded-full shadow-elegant">
-          <a href="mailto:davi.vargas7@gmail.com">
+        <EmailOptions align="start">
+          <Button type="button" size="lg" className="rounded-full shadow-elegant">
             <Mail className="h-4 w-4" />
             davi.vargas7@gmail.com
-          </a>
-        </Button>
+          </Button>
+        </EmailOptions>
         <Button asChild variant="outline" size="lg" className="rounded-full">
           <a href="#" download>Download résumé</a>
         </Button>

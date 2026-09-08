@@ -1,11 +1,11 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { EmailOptions } from "@/components/EmailOptions";
 import { ThemeToggle } from "./ThemeToggle";
 import { SideNav } from "./SideNav";
 
-const socials = [
+const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/davivargas" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/davi-vargas/" },
-  { icon: Mail, label: "Email", href: "mailto:davi.vargas7@gmail.com" },
 ];
 
 export const Sidebar = () => {
@@ -36,7 +36,7 @@ export const Sidebar = () => {
       </div>
 
       <ul className="flex items-center gap-5 mt-12 lg:mt-0">
-        {socials.map(({ icon: Icon, label, href }) => (
+        {socialLinks.map(({ icon: Icon, label, href }) => (
           <li key={label}>
             <a
               href={href}
@@ -49,6 +49,17 @@ export const Sidebar = () => {
             </a>
           </li>
         ))}
+        <li>
+          <EmailOptions>
+            <button
+              type="button"
+              aria-label="Email options"
+              className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-smooth inline-block"
+            >
+              <Mail className="h-5 w-5" />
+            </button>
+          </EmailOptions>
+        </li>
       </ul>
     </aside>
   );
