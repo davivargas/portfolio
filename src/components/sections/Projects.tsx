@@ -1,4 +1,5 @@
 import { ArrowUpRight, ExternalLink, Github, Youtube } from "lucide-react";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { isLink, youtubeId } from "@/lib/projectLinks";
 import {
@@ -61,12 +62,15 @@ const buttonClass =
   "inline-flex items-center gap-2 rounded-lg border border-border bg-accent px-3 py-2 text-sm font-medium text-accent-foreground transition-smooth hover:border-primary hover:text-primary";
 
 export const Projects = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
+
   return (
     <section id="projects" className="scroll-mt-24 py-16 lg:py-24">
       <SectionHeading eyebrow="03 / Projects" title="Selected work" />
 
-      <ol className="group/list space-y-2">
-        {projects.map((p) => {
+      <ol id="project-list" className="group/list space-y-2">
+        {visibleProjects.map((p) => {
           const videoId = youtubeId(p.youtube);
 
           // Buttons in the dialog footer. The YouTube button is always present when
@@ -268,6 +272,18 @@ export const Projects = () => {
           );
         })}
       </ol>
+
+      {projects.length > 3 && (
+        <button
+          type="button"
+          aria-controls="project-list"
+          aria-expanded={showAllProjects}
+          onClick={() => setShowAllProjects((isExpanded) => !isExpanded)}
+          className="mt-6 font-mono text-sm text-primary transition-smooth hover:text-primary/80"
+        >
+          {showAllProjects ? "Show less" : `See all ${projects.length} projects`}
+        </button>
+      )}
     </section>
   );
 };
