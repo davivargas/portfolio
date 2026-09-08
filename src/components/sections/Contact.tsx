@@ -24,7 +24,7 @@ export const Contact = () => {
       </div>
 
       <p className="mt-16 text-xs font-mono text-muted-foreground">
-        Designed in Figma, built with React + Tailwind. Type set in Inter & JetBrains Mono.
+        Designed in Figma and Stitch, built with React + Tailwind. Type set in Inter & JetBrains Mono.
       </p>
     </section>
   );
