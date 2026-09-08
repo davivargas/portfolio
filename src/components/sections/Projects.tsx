@@ -4,44 +4,19 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    name: "Lumen Analytics",
+    name: "PullerBear",
     description:
-      "Real-time event analytics dashboard with sub-second query latency. Designed the streaming pipeline and built the visualization layer from scratch.",
-    tags: ["Next.js", "ClickHouse", "WebSockets", "D3"],
-    live: "#",
-    github: "#",
+      "Built a VS Code extension that watches a Git remote, summarizes incoming commits with AI before the developer pulls, and answers follow-up questions in a sidebar chat; two-day hackathon project with three teammates.",
+    tags: ["TypeScript", "VS Code Extension API", "React", "OpenRouter", "Mocha"],
+    github: "https://github.com/davivargas/PullerBear",
   },
   {
-    name: "Quill Editor",
+    name: "AskMii",
     description:
-      "Collaborative markdown editor with CRDT-based sync, offline support, and a plugin system for custom blocks.",
-    tags: ["React", "Yjs", "IndexedDB", "TipTap"],
-    live: "#",
-    github: "#",
-  },
-  {
-    name: "Pathfinder",
-    description:
-      "Open-source CLI for visualizing and refactoring import graphs in large TypeScript monorepos.",
-    tags: ["TypeScript", "Node", "OSS"],
-    live: "#",
-    github: "#",
-  },
-  {
-    name: "Beacon",
-    description:
-      "Status-page service for indie SaaS — minimal, fast, and self-hostable in under a minute.",
-    tags: ["Go", "SQLite", "HTMX"],
-    live: "#",
-    github: "#",
-  },
-  {
-    name: "Palette",
-    description:
-      "Tiny color-system generator that produces accessible HSL token sets from a single brand color.",
-    tags: ["TypeScript", "Color Science"],
-    live: "#",
-    github: "#",
+      "Built a question-and-answer site where BCIT students post course questions, answer each other, and earn points, on a three-person team for the COMP 1800 course project; deployed on Firebase Hosting since December 2024.",
+    tags: ["JavaScript", "HTML", "CSS", "Bootstrap 5", "Firebase", "Firestore"],
+    github: "https://github.com/davivargas/AskMii",
+    live: "https://comp1800-bby22.web.app/",
   },
 ];
 
