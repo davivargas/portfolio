@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const Contact = () => {
   return (
     <section id="contact" className="scroll-mt-24 py-16 lg:py-24">
-      <SectionHeading eyebrow="05 / Contact" title="Let's build something" />
+      <SectionHeading eyebrow="06 / Contact" title="Let's build something" />
 
       <p className="text-base text-muted-foreground leading-relaxed mb-6">
         I'm currently exploring new opportunities and always happy to chat with other people who are also building real solutions. The fastest way to reach me is email.
