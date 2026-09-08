@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -87,12 +88,15 @@ const experiences = [
 ];
 
 export const Experience = () => {
+  const [showAllExperiences, setShowAllExperiences] = useState(false);
+  const visibleExperiences = showAllExperiences ? experiences : experiences.slice(0, 3);
+
   return (
     <section id="experience" className="scroll-mt-24 py-16 lg:py-24">
       <SectionHeading eyebrow="02 / Experience" title="A short timeline" />
 
-      <ol className="group/list space-y-2">
-        {experiences.map((exp, index) => (
+      <ol id="experience-list" className="group/list space-y-2">
+        {visibleExperiences.map((exp, index) => (
           <li key={`${exp.company}-${exp.period}-${index}`}>
             <Dialog>
               <DialogTrigger asChild>
@@ -160,6 +164,18 @@ export const Experience = () => {
           </li>
         ))}
       </ol>
+
+      {experiences.length > 3 && (
+        <button
+          type="button"
+          aria-controls="experience-list"
+          aria-expanded={showAllExperiences}
+          onClick={() => setShowAllExperiences((isExpanded) => !isExpanded)}
+          className="mt-6 font-mono text-sm text-primary transition-smooth hover:text-primary/80"
+        >
+          {showAllExperiences ? "Show less" : "See my whole journey"}
+        </button>
+      )}
     </section>
   );
 };
