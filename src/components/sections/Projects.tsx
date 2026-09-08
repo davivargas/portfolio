@@ -18,6 +18,10 @@ type Project = {
   github?: string;
   youtube?: string;
   live?: string;
+  /** Mark served from public/projects/, square or wide. Falls back to the first letter. */
+  logo?: string;
+  /** Set for single-colour dark marks so they invert in the dark theme. */
+  monochromeLogo?: boolean;
 };
 
 const projects: Project[] = [
@@ -32,6 +36,8 @@ const projects: Project[] = [
     tags: ["TypeScript", "VS Code Extension API", "React", "OpenRouter", "Mocha"],
     github: "https://github.com/davivargas/PullerBear",
     youtube: "https://www.youtube.com/watch?v=YWMgsa5zrdI",
+    logo: "/projects/pullerbear.svg",
+    monochromeLogo: true,
   },
   {
     name: "AskMii",
@@ -44,6 +50,7 @@ const projects: Project[] = [
     tags: ["JavaScript", "HTML", "CSS", "Bootstrap 5", "Firebase", "Firestore"],
     github: "https://github.com/davivargas/AskMii",
     live: "https://comp1800-bby22.web.app/",
+    logo: "/projects/askmii.svg",
   },
 ];
 
@@ -87,10 +94,29 @@ export const Projects = () => {
                 <div className="group relative grid grid-cols-1 gap-4 rounded-xl p-4 -mx-4 transition-smooth hover:bg-card/60 hover:shadow-card lg:group-hover/list:opacity-50 lg:hover:!opacity-100 sm:grid-cols-8">
                   <div className="absolute -inset-px rounded-xl border border-transparent pointer-events-none group-hover:border-border" />
 
-                  <div className="sm:col-span-2">
-                    <div className="flex h-14 w-full items-center justify-center rounded-lg border border-border bg-gradient-to-br from-accent to-secondary font-mono text-2xl font-bold text-accent-foreground">
-                      {p.name[0]}
-                    </div>
+                  {/* Project mark: the logo when one exists, otherwise the first
+                      letter. No background, so the artwork sits on the card itself.
+                      Height is fixed and width follows the artwork, capped at the
+                      column, so square icons and wide wordmarks both fit. */}
+                  <div className="flex items-start sm:col-span-2 sm:justify-center">
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt=""
+                        aria-hidden="true"
+                        draggable={false}
+                        className={`h-16 w-auto max-w-full object-contain transition-smooth group-hover:scale-105 sm:h-20 ${
+                          p.monochromeLogo ? "dark:invert" : ""
+                        }`}
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="flex h-16 w-16 items-center justify-center font-mono text-4xl font-bold text-muted-foreground transition-smooth group-hover:text-primary sm:h-20 sm:w-20"
+                      >
+                        {p.name[0]}
+                      </div>
+                    )}
                   </div>
 
                   <div className="sm:col-span-6">
