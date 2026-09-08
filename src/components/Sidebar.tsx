@@ -1,12 +1,11 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { SideNav } from "./SideNav";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@alexcarter.dev" },
+  { icon: Github, label: "GitHub", href: "https://github.com/davivargas" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/davi-vargas/" },
+  { icon: Mail, label: "Email", href: "mailto:davi.vargas7@gmail.com" },
 ];
 
 export const Sidebar = () => {
@@ -20,14 +19,14 @@ export const Sidebar = () => {
               hello, world
             </p>
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight">
-              Alex Carter
+              Davi Vargas
             </h1>
             <h2 className="mt-3 text-lg sm:text-xl font-medium text-foreground/80">
               Software Engineer
               <span className="text-highlight animate-blink ml-1">_</span>
             </h2>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
-              I build accessible, thoughtfully-crafted products at the seam of design and engineering.
+              BCIT CST student building real projects while learning new technologies and strengthening my software development skills.
             </p>
           </div>
           <ThemeToggle />
