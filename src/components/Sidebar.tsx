@@ -25,9 +25,9 @@ export const Sidebar = () => {
               Software Engineer
               <span className="text-highlight animate-blink ml-1">_</span>
             </h2>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
+            {/* <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
               BCIT CST student building real projects while learning new technologies and strengthening my software development skills.
-            </p>
+            </p> */}
           </div>
           <ThemeToggle />
         </div>
