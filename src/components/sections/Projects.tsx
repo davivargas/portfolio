@@ -29,10 +29,10 @@ const projects: Project[] = [
   {
     name: "PullerBear",
     description:
-      "Built a VS Code extension that watches a Git remote, summarizes incoming commits with AI before the developer pulls, and answers follow-up questions in a sidebar chat; two-day hackathon project with three teammates.",
+      "Built a VS Code extension that summarizes incoming Git commits with AI before the developer pulls and answers follow-up questions in a sidebar chat; two-day hackathon project with three teammates, then hardened solo.",
     details: [
-      "Wrote the entire test suite: 66 Mocha cases across 16 files covering extension activation, the commit-threshold orchestration, review-file persistence, the OpenRouter client with mocked responses, and a user-workflow integration test.",
-      "Hardened the OpenRouter integration solo after the hackathon: a 30-second timeout with one five-minute retry, HTTP status codes mapped to plain-language errors, and a sidebar Retry button for rate-limit, timeout, and network failures.",
+      "Built the polling loop's configurable commit-volume guard: each fetch logs newly incoming commits in a rolling window whose count prompts the user above one threshold and pauses AI summaries above a higher one.",
+      "Made failed summaries recoverable: classified OpenRouter errors so only rate-limit, timeout, outage, and network failures offer a sidebar Retry, which re-fetches and re-runs the analysis only while the remote commit is unchanged.",
     ],
     tags: ["TypeScript", "VS Code Extension API", "React", "OpenRouter", "Mocha"],
     github: "https://github.com/davivargas/PullerBear",
