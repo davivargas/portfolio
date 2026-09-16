@@ -117,7 +117,7 @@ export const Projects = () => {
                   <div className="flex items-start sm:col-span-2 sm:justify-center">
                     {p.logo ? (
                       <img
-                        src={p.logo}
+                        src={`${import.meta.env.BASE_URL}${p.logo.replace(/^\//, "")}`}
                         alt=""
                         aria-hidden="true"
                         draggable={false}
