@@ -53,6 +53,18 @@ const projects: Project[] = [
     live: "https://comp1800-bby22.web.app/",
     logo: "/projects/askmii.svg",
   },
+  {
+    name: "Quantum Sum",
+    description:
+      "Built three Java games solo for BCIT's COMP 2522 term project: a console geography quiz, a number-ordering game, and Quantum Sum, an original JavaFX dice-and-grid puzzle designed with ChatGPT per the course brief.",
+    details: [
+      "Implemented Quantum Sum's rules: clearing cells that sum to the dice collapses each column and re-rolls fallen cells; a wrong pick ends the game only when a bitmask subset-sum search finds no combination.",
+      "Made both JavaFX games relaunchable from the console menu without restarting the JVM: each launcher starts the platform once, disables implicit exit, and blocks on a CountDownLatch until the window closes.",
+    ],
+    tags: ["Java", "JavaFX", "JUnit 5", "CSS", "ChatGPT"],
+    github: "https://github.com/davivargas/COMP2522-TermProject",
+    youtube: "https://www.youtube.com/watch?v=w8x6IFrAGjE&list=PLV89nqIpKBepSudbVfBftERuKC3zZVGmM",
+  },
 ];
 
 const chipClass =
