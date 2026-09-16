@@ -38,7 +38,7 @@ export const About = () => {
           turned into a career.
         </p>
         <p>
-          These days I focus on the seams between design and engineering — design systems,
+          These days I focus on the seams between design and engineering: design systems,
           animation, performance, and the small interactions that make a product feel alive. I care
           a lot about <span className="text-foreground">accessibility</span>,{" "}
           <span className="text-foreground">typography</span>, and the discipline of shipping.
