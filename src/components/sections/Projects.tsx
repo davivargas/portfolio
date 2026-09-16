@@ -45,8 +45,8 @@ const projects: Project[] = [
     description:
       "Built a question-and-answer site where BCIT students post course questions, answer each other, and earn points, on a three-person team for the COMP 1800 course project; deployed on Firebase Hosting since December 2024.",
     details: [
-      "Built the bookmarks feature: a toggle on each question that updates the user's Firestore document with arrayUnion and arrayRemove, a page listing every bookmark, and the three newest on the home page.",
-      "Merged two competing home page layouts into one responsive main page, using CSS grid areas that re-flow the intro, bookmarks, and browse sections across phone, tablet, and desktop breakpoints.",
+      "Built the bookmarks feature: question ids stored as an array on each user's Firestore document, toggled atomically with arrayUnion and arrayRemove, and mirrored in page state so the icon flips without a re-read.",
+      "Merged the team's two competing home pages into one, replacing duplicated markup with a single layout whose CSS grid areas re-flow the intro, bookmarks, and browse sections across phone, tablet, and desktop breakpoints.",
     ],
     tags: ["JavaScript", "HTML", "CSS", "Bootstrap 5", "Firebase", "Firestore"],
     github: "https://github.com/davivargas/AskMii",
