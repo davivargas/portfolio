@@ -45,8 +45,9 @@ const projects: Project[] = [
     description:
       "Built a VS Code extension that summarizes incoming Git commits with AI before the developer pulls and answers follow-up questions in a sidebar chat; two-day hackathon project with three teammates, then hardened solo.",
     details: [
-      "Built the polling loop's configurable commit-volume guard: each fetch logs newly incoming commits in a rolling window whose count prompts the user above one threshold and pauses AI summaries above a higher one.",
-      "Made failed summaries recoverable: classified OpenRouter errors so only rate-limit, timeout, outage, and network failures offer a sidebar Retry, which re-fetches and re-runs the analysis only while the remote commit is unchanged.",
+      "Built the extension in TypeScript on the VS Code Extension API, with esbuild emitting a CommonJS Node host and an ES module React 19 sidebar webview, verified by 66 Mocha tests.",
+      "Polled every open repository through the built-in vscode.git API on a configurable interval, counting incoming commits in a rolling window that prompts above one threshold and pauses summaries above a higher one.",
+      "Sent the incoming diff to OpenRouter under a prompt demanding a JSON array of file, line, severity, and summary entries, which render as sidebar cards and persist as context for the chat.",
     ],
     tags: ["TypeScript", "VS Code Extension API", "React", "OpenRouter", "Mocha"],
     github: "https://github.com/davivargas/PullerBear",
@@ -59,8 +60,9 @@ const projects: Project[] = [
     description:
       "Built a question-and-answer site where BCIT students post course questions, answer each other, and earn points, on a three-person team for the COMP 1800 course project; deployed on Firebase Hosting since December 2024.",
     details: [
-      "Built the bookmarks feature: question ids stored as an array on each user's Firestore document, toggled atomically with arrayUnion and arrayRemove, and mirrored in page state so the icon flips without a re-read.",
-      "Merged the team's two competing home pages into one, replacing duplicated markup with a single layout whose CSS grid areas re-flow the intro, bookmarks, and browse sections across phone, tablet, and desktop breakpoints.",
+      "Built the site as thirteen static pages with no build step, vanilla JavaScript on the Firebase 8 CDN SDKs for email sign-in and Firestore, styled with Bootstrap 5.",
+      "Modelled questions as Firestore documents with an answers subcollection, author references, and tags as a boolean map, so tag filters and paged browsing stay server side behind startAfter cursors.",
+      "Scored reputation with atomic Firestore increments, awarding one point for an answer and five more when the question's author marks that answer as the accepted solution.",
     ],
     tags: ["JavaScript", "HTML", "CSS", "Bootstrap 5", "Firebase", "Firestore"],
     github: "https://github.com/davivargas/AskMii",
@@ -72,8 +74,9 @@ const projects: Project[] = [
     description:
       "Built three Java games solo for BCIT's COMP 2522 term project: a console geography quiz, a number-ordering game, and Quantum Sum, an original JavaFX dice-and-grid puzzle designed with ChatGPT per the course brief.",
     details: [
-      "Implemented Quantum Sum's rules: clearing cells that sum to the dice collapses each column and re-rolls fallen cells; a wrong pick ends the game only when a bitmask subset-sum search finds no combination.",
-      "Made both JavaFX games relaunchable from the console menu without restarting the JVM: each launcher starts the platform once, disables implicit exit, and blocks on a CountDownLatch until the window closes.",
+      "Structured the three games behind one console menu that calls a shared Game interface, with both JavaFX games extending a common AbstractGame base and loading their own CSS stylesheets.",
+      "Kept both JavaFX games relaunchable from that menu in one JVM by starting the platform once, disabling implicit exit, and blocking on a CountDownLatch until the window closes.",
+      "Wrote 35 JUnit 5 tests across eight classes for Quantum Sum, covering dice distribution over 10,000 rolls, subset-sum edge cases, grid collapse, and score-file parsing with a corrupted entry.",
     ],
     tags: ["Java", "JavaFX", "JUnit 5", "CSS", "ChatGPT"],
     github: "https://github.com/davivargas/COMP2522-TermProject",
