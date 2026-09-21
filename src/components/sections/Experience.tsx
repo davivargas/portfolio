@@ -45,7 +45,7 @@ const experiences = [
     summary:
       "Internal performance platform for the team building custom AI agents at Zip. Built the six Linear-backed dashboards that report time in review, estimate accuracy, and contractor cost, over a PostgreSQL sync pipeline.",
     details: [
-      "Built six Linear-backed dashboard views (React 19, TypeScript, shadcn/ui) over 35 REST endpoints, giving engineering managers per-engineer KPIs, project rollups, and estimate accuracy that Linear's issue views cannot report.",
+      "Designed and built 35 REST endpoints and six Linear-backed dashboard views (React 19, TypeScript, shadcn/ui), giving engineering managers per-engineer KPIs, project rollups, and estimate accuracy that Linear's issue views cannot report.",
       "Built the scheduled ingestion behind it, syncing ~10K tickets from Linear's GraphQL and Asana's REST APIs with cursor checkpoints, rate-limit retries, and daily drift audits that catch missed updates.",
       "Added a health-monitoring system with 11 checks (data drift, stuck syncs, API reachability) that auto-runs reconciliation and shows non-engineers a banner with Claude-generated root-cause explanations.",
       "Shipped a quarterly contractor report on Zip's February fiscal calendar that exports to Excel with live formulas and native charts, so leadership can re-run cost and savings figures at new rates.",
