@@ -132,8 +132,10 @@ export const Projects = () => {
                   {/* Project mark: the logo when one exists, otherwise the first
                       letter. No background, so the artwork sits on the card itself.
                       Height is fixed and width follows the artwork, capped at the
-                      column, so square icons and wide wordmarks both fit. */}
-                  <div className="flex items-start sm:col-span-2 sm:justify-center">
+                      column, so square icons and wide wordmarks both fit. The top
+                      margin on the two-column layout drops the mark's centre onto the
+                      description's centre instead of the title's. */}
+                  <div className="flex items-start sm:col-span-2 sm:mt-8 sm:justify-center">
                     {p.logo ? (
                       <img
                         src={`${import.meta.env.BASE_URL}${p.logo.replace(/^\//, "")}`}
