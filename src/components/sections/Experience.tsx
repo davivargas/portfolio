@@ -38,7 +38,7 @@ const experiences = [
   },
   {
     period: "May 2026\nto Aug 2026",
-    role: "Software Development Intern",
+    role: "Software Development Practicum",
     company: "Zip",
     // Previous summary, kept for reference:
     // "Re-architected an internal operations dashboard into a PostgreSQL-backed data platform with scheduled Asana and Linear ingestion, self-healing health checks, and a family of React analytics views, then handed it over with full operator runbooks.",
