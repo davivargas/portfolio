@@ -70,7 +70,7 @@ const projects: Project[] = [
     logo: "/projects/askmii.svg",
   },
   {
-    name: "Quantum Sum",
+    name: "COMP 2522 Java Term Project",
     description:
       "Built three Java games solo for BCIT's COMP 2522 term project: a console geography quiz, a number-ordering game, and Quantum Sum, an original JavaFX dice-and-grid puzzle designed with ChatGPT per the course brief.",
     details: [
@@ -81,6 +81,7 @@ const projects: Project[] = [
     tags: ["Java", "JavaFX", "JUnit 5", "CSS", "ChatGPT"],
     github: "https://github.com/davivargas/COMP2522-TermProject",
     youtube: "https://www.youtube.com/watch?v=w8x6IFrAGjE&list=PLV89nqIpKBepSudbVfBftERuKC3zZVGmM",
+    logo: "/projects/comp2522.svg",
   },
 ];
 
