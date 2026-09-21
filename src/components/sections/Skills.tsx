@@ -24,11 +24,11 @@ const skillGroups = [
   },
   {
     category: "Cloud & DevOps",
-    items: ["Docker", "Docker Compose", "AWS", "GitHub Actions", "TeamCity", "CI/CD", "Git", "GitHub", "Bitbucket", "Jira"],
+    items: ["Docker", "AWS", "GitHub Actions", "TeamCity", "CI/CD", "Git", "GitHub", "Bitbucket", "Jira"],
   },
   {
-    category: "Data & analytics",
-    items: ["Power BI", "Advanced Excel", "ETL and ELT", "Exploratory data analysis", "Data visualization"],
+    category: "Analytics",
+    items: ["Power BI", "Advanced Excel", "ETL and ELT", "Data viz", "Exploratory data analysis"],
   },
 ];
 
