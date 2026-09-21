@@ -27,6 +27,20 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: "Fall Line",
+    description:
+      "Built an offline-first Android app that records a snowboarding day and splits it into runs and lift rides; solo project, a Flutter client with a FastAPI backend, still in progress.",
+    details: [
+      "Classified each recorded track into runs, lift rides, and stops with a Viterbi-decoded hidden Markov model over speed and vertical rate, anchored to catalog lift lines from OpenStreetMap ski data.",
+      "Recorded points into a local Drift database behind a Kotlin foreground service and fused location bridge, then uploaded them in batches the backend deduplicates by elapsed offset, so retries never double-count.",
+      "Wrote 423 backend pytest cases and 265 Flutter tests, gated in GitHub Actions behind ruff, mypy, and flutter analyze, with the fifteen Alembic migrations applied before the backend suite runs.",
+    ],
+    tags: ["Flutter", "Dart", "FastAPI", "PostgreSQL", "Riverpod", "Kotlin", "GPS"],
+    github: "https://github.com/davivargas/Fall-Line",
+    youtube: "https://www.youtube.com/watch?v=Ut6WIyQr13k",
+    logo: "/projects/fall-line.png",
+  },
+  {
     name: "PullerBear",
     description:
       "Built a VS Code extension that summarizes incoming Git commits with AI before the developer pulls and answers follow-up questions in a sidebar chat; two-day hackathon project with three teammates, then hardened solo.",
