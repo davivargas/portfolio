@@ -88,8 +88,8 @@ const projects: Project[] = [
 const chipClass =
   "inline-flex items-center gap-1.5 rounded-md border border-border px-2 py-1 font-mono text-[11px] text-muted-foreground transition-smooth hover:border-primary hover:text-primary";
 
-const buttonClass =
-  "inline-flex items-center gap-2 rounded-lg border border-border bg-accent px-3 py-2 text-sm font-medium text-accent-foreground transition-smooth hover:border-primary hover:text-primary";
+const dialogLinkClass =
+  "inline-flex items-center gap-1.5 rounded-lg border border-border bg-accent px-2.5 py-1.5 text-xs font-medium text-accent-foreground transition-smooth hover:border-primary hover:text-primary";
 
 export const Projects = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -103,18 +103,19 @@ export const Projects = () => {
         {visibleProjects.map((p) => {
           const videoId = youtubeId(p.youtube);
 
-          // Buttons in the dialog footer. The YouTube button is always present when
-          // a URL exists: beside an embedded player it opens the same video on
-          // YouTube, and without an embed it is the only way to watch the demo.
+          // Buttons in the dialog header, beside the close button. The YouTube
+          // button is always present when a URL exists: beside an embedded player it
+          // opens the same video on YouTube, and without an embed it is the only way
+          // to watch the demo. `label` carries the longer wording for screen readers.
           const externalLinks = [
-            { href: p.github, label: "View code", short: "Code", Icon: Github },
+            { href: p.github, label: "View code on GitHub", short: "Code", Icon: Github },
             {
               href: p.youtube,
-              label: videoId ? "Open on YouTube" : "Watch demo",
-              short: "Demo",
+              label: videoId ? "Open on YouTube" : "Watch demo on YouTube",
+              short: "YouTube",
               Icon: Youtube,
             },
-            { href: p.live, label: "Open live site", short: "Live", Icon: ExternalLink },
+            { href: p.live, label: "Open live site", short: "Site", Icon: ExternalLink },
           ].filter((link) => isLink(link.href));
 
           const hasActions = externalLinks.length > 0 || videoId !== null;
@@ -233,8 +234,29 @@ export const Projects = () => {
                 </div>
 
                 <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto border-border/80 bg-background/95 p-6 sm:rounded-2xl">
-                  <DialogHeader className="pr-8">
+                  {/* pr-8 keeps the header clear of the absolutely positioned close
+                      button in the dialog's top right corner. Narrow screens stack the
+                      buttons under the title so a long name is not squeezed. */}
+                  <DialogHeader className="flex-col items-start gap-3 space-y-0 border-b border-border pb-4 pr-8 text-left sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <DialogTitle className="text-xl">{p.name}</DialogTitle>
+
+                    {externalLinks.length > 0 && (
+                      <div className="flex shrink-0 flex-wrap gap-2 sm:justify-end">
+                        {externalLinks.map(({ href, label, short, Icon }) => (
+                          <a
+                            key={label}
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`${p.name}: ${label}`}
+                            className={dialogLinkClass}
+                          >
+                            <Icon className="h-3.5 w-3.5" />
+                            {short}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </DialogHeader>
 
                   <div className="space-y-4">
@@ -275,25 +297,6 @@ export const Projects = () => {
                           <li key={detail}>{detail}</li>
                         ))}
                       </ul>
-                    )}
-
-                    {externalLinks.length > 0 && (
-                      <div className="flex flex-wrap gap-2 border-t border-border pt-4">
-                        {externalLinks.map(({ href, label, Icon }) => (
-                          <a
-                            key={label}
-                            href={href}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={`${p.name}: ${label}`}
-                            className={buttonClass}
-                          >
-                            <Icon className="h-4 w-4" />
-                            {label}
-                            <ArrowUpRight className="h-3.5 w-3.5" />
-                          </a>
-                        ))}
-                      </div>
                     )}
                   </div>
                 </DialogContent>
