@@ -12,8 +12,8 @@ import { SectionHeading } from "../SectionHeading";
 
 const experiences = [
   {
-    period: "Aug 2026\nto Present",
-    role: "Software Developer (Contract)",
+    period: "Aug 2026\nto Dec 2026",
+    role: "Software Developer (Fixed-term Contract)",
     company: "Sprinter Delivery",
     // Previous summary, kept for reference:
     // "Contracted by a courier company to replace its Excel and VBA operations system. Built the driver proof-of-delivery app that works a full shift offline, with the admin portal designed and next to build."
