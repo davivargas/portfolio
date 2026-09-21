@@ -15,15 +15,24 @@ const experiences = [
     period: "Aug 2026\nto Present",
     role: "Software Developer (Contract)",
     company: "Sprinter Delivery",
+    // Previous summary, kept for reference:
+    // "Contracted by a courier company to replace its Excel and VBA operations system. Built the driver proof-of-delivery app that works a full shift offline, with the admin portal designed and next to build."
     summary:
-      "Contracted by a courier company to replace its Excel and VBA operations system. Built the driver proof-of-delivery app that works a full shift offline, with the admin portal designed and next to build.",
+      "Contracted by a courier company to replace its Excel and VBA operations system. Built both halves: the offline driver app for proof of delivery and the admin portal the office dispatches and bills from.",
     details: [
-      "Built a driver proof-of-delivery app for a courier company replacing its Excel and VBA operations system, and designed the admin portal data model from 13,800+ legacy orders and their VBA modules.",
-      "Built an offline-first Progressive Web App (React 19, TypeScript, IndexedDB) that saves proofs locally and uploads with idempotent retries, verified by end-to-end tests that complete a full shift offline without duplicates.",
-      "Designed and built the PostgreSQL schema (Supabase) with row-level security on every table, append-only audit tables, and single-transaction write functions, verified by 230+ database tests including cross-driver access attacks.",
-      "Shipped 11 driver screens so drivers can find orders with typo-tolerant search, capture photos and vector signatures with GPS, load vehicles by scan, and accept dispatch offers in real time.",
-      "Built a GitHub Actions pipeline that replays every migration on a fresh Supabase stack and runs 850+ browser tests plus 29 Playwright end-to-end tests with accessibility gates, so policy mistakes fail before reaching drivers.",
-      "Worked directly with the company owner to turn field feedback into spec changes before code and verified each screen with them on real phones in both themes; authored all 320 commits as sole engineer.",
+      "Built the admin portal that runs the courier's day, ten screens where the office takes orders, watches a live board, dispatches drivers and bills customers, retiring a 13,855-order Excel and VBA workbook.",
+      "Built the driver Progressive Web App (React 19, TypeScript, IndexedDB) so couriers capture photos, signatures and GPS without signal, uploading through an idempotent outbox verified by a full-shift offline end-to-end test.",
+      "Replaced clipboard-and-text-message dispatch with a real-time offer pipeline: one transactional function sends the assignment, Web Push reaches the driver's phone, and accept or decline lands back on the board live.",
+      "Rebuilt the spreadsheet's rate calculator as a PostgreSQL function pricing every order from yearly rate cards, 74 zoned cities and weekly fuel surcharges, persisted per order so invoices stay auditable.",
+      "Integrated QuickBooks and Pumble so issued invoices post straight to the accounting ledger with payment status returning by webhook, and dispatch messages reach drivers in the company's chat without retyping.",
+      "Locked the platform down with row-level security on every table and a schema that stores no card data, verified by 561 database test assertions and walked screen by screen with the company owner.",
+      // Previous bullets, kept for reference:
+      // "Built a driver proof-of-delivery app for a courier company replacing its Excel and VBA operations system, and designed the admin portal data model from 13,800+ legacy orders and their VBA modules.",
+      // "Built an offline-first Progressive Web App (React 19, TypeScript, IndexedDB) that saves proofs locally and uploads with idempotent retries, verified by end-to-end tests that complete a full shift offline without duplicates.",
+      // "Designed and built the PostgreSQL schema (Supabase) with row-level security on every table, append-only audit tables, and single-transaction write functions, verified by 230+ database tests including cross-driver access attacks.",
+      // "Shipped 11 driver screens so drivers can find orders with typo-tolerant search, capture photos and vector signatures with GPS, load vehicles by scan, and accept dispatch offers in real time.",
+      // "Built a GitHub Actions pipeline that replays every migration on a fresh Supabase stack and runs 850+ browser tests plus 29 Playwright end-to-end tests with accessibility gates, so policy mistakes fail before reaching drivers.",
+      // "Worked directly with the company owner to turn field feedback into spec changes before code and verified each screen with them on real phones in both themes; authored all 320 commits as sole engineer.",
     ],
     tags: ["TypeScript", "React", "PWA", "Supabase", "PostgreSQL", "IndexedDB", "Playwright", "GitHub Actions"],
   },
