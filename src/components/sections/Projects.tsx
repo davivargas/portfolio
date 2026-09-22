@@ -5,6 +5,7 @@ import { isLink, youtubeId } from "@/lib/projectLinks";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -14,7 +15,10 @@ import { SectionHeading } from "../SectionHeading";
 type Project = {
   name: string;
   description: string;
-  details?: string[];
+  context: string;
+  problem: string;
+  details: string[];
+  outcome: string;
   tags: string[];
   github?: string;
   youtube?: string;
@@ -29,12 +33,17 @@ const projects: Project[] = [
   {
     name: "Fall Line",
     description:
-      "Built an offline-first Android app that records a snowboarding day and splits it into runs and lift rides; solo project, a Flutter client with a FastAPI backend, still in progress.",
+      "An offline Android snowboarding tracker that grew from a course project into an app I use on the mountain and continue to improve.",
+    context: "Solo project · Started in an Android course · In development",
+    problem:
+      "Fall Line started as a mobile/Android course project. I enjoyed building it and using it while snowboarding from February to April 2026, so I decided to keep developing it. I want full control over my tracking data and access to all my stats without paying for a premium subscription.",
     details: [
-      "Classified each recorded track into runs, lift rides, and stops with a Viterbi-decoded hidden Markov model over speed and vertical rate, anchored to catalog lift lines from OpenStreetMap ski data.",
-      "Recorded points into a local Drift database behind a Kotlin foreground service and fused location bridge, then uploaded them in batches the backend deduplicates by elapsed offset, so retries never double-count.",
-      "Wrote 423 backend pytest cases and 265 Flutter tests, gated in GitHub Actions behind ruff, mypy, and flutter analyze, with the fifteen Alembic migrations applied before the backend suite runs.",
+      "Built track classification with a hidden Markov model and Viterbi decoding, combining speed, vertical movement, and mapped ski-lift paths to distinguish runs, lifts, and stops.",
+      "Kept GPS recording on-device with a Kotlin foreground service and Drift database, then uploaded batches to FastAPI with duplicate checks based on elapsed time.",
+      "Configured GitHub Actions to run pytest and Flutter tests with linting and type checks, applying Alembic migrations before backend tests to check database compatibility.",
     ],
+    outcome:
+      "Used the app during the February–April 2026 snowboarding season. I'm now improving its offline recording and run, lift, and stop analysis with the goal of making it my main snowboarding tracker.",
     tags: ["Flutter", "Dart", "FastAPI", "PostgreSQL", "Riverpod", "Kotlin", "GPS"],
     github: "https://github.com/davivargas/Fall-Line",
     youtube: "https://www.youtube.com/watch?v=Ut6WIyQr13k",
@@ -43,12 +52,17 @@ const projects: Project[] = [
   {
     name: "PullerBear",
     description:
-      "Built a VS Code extension that summarizes incoming Git commits with AI before the developer pulls and answers follow-up questions in a sidebar chat; two-day hackathon project with three teammates, then hardened solo.",
+      "A VS Code extension that helps developers review incoming Git changes before pulling, with AI summaries and follow-up questions in a sidebar.",
+    context: "Four-person BCIT hackathon team · Continued afterward",
+    problem:
+      "Developers need context about incoming changes before merging them into local work. Summaries also need to stay tied to the branch being reviewed when the developer switches tasks.",
     details: [
-      "Built the extension in TypeScript on the VS Code Extension API, with esbuild emitting a CommonJS Node host and an ES module React 19 sidebar webview, verified by 66 Mocha tests.",
-      "Polled every open repository through the built-in vscode.git API on a configurable interval, counting incoming commits in a rolling window that prompts above one threshold and pauses summaries above a higher one.",
-      "Sent the incoming diff to OpenRouter under a prompt demanding a JSON array of file, line, severity, and summary entries, which render as sidebar cards and persist as context for the chat.",
+      "Added OpenRouter model configuration, retry controls, and actionable error messages so developers can configure summaries and recover from failed requests.",
+      "Corrected incoming-commit counts for configured Git branches and added branch-change cleanup to discard reviews that no longer match the selected branch.",
+      "Fixed review-data persistence for follow-up chat and added Mocha tests for summary generation, API failures, and question-and-answer workflows.",
     ],
+    outcome:
+      "The team built the extension at a BCIT hackathon. My subsequent work addressed branch context, request failures, and chat persistence; the demo shows the review workflow inside VS Code.",
     tags: ["TypeScript", "VS Code Extension API", "React", "OpenRouter", "Mocha"],
     github: "https://github.com/davivargas/PullerBear",
     youtube: "https://www.youtube.com/watch?v=YWMgsa5zrdI",
@@ -58,12 +72,17 @@ const projects: Project[] = [
   {
     name: "AskMii",
     description:
-      "Built a question-and-answer site where BCIT students post course questions, answer each other, and earn points, on a three-person team for the COMP 1800 course project; deployed on Firebase Hosting since December 2024.",
+      "A course question-and-answer site for BCIT students to share answers and return to saved discussions. My work focused on the homepage and bookmarking.",
+    context: "Three-person team · BCIT course project",
+    problem:
+      "Students need to browse course questions across devices and find useful discussions again. The homepage brings question browsing, saved discussions, and contribution points into one place.",
     details: [
-      "Built the site as thirteen static pages with no build step, vanilla JavaScript on the Firebase 8 CDN SDKs for email sign-in and Firestore, styled with Bootstrap 5.",
-      "Modelled questions as Firestore documents with an answers subcollection, author references, and tags as a boolean map, so tag filters and paged browsing stay server side behind startAfter cursors.",
-      "Scored reputation with atomic Firestore increments, awarding one point for an answer and five more when the question's author marks that answer as the accepted solution.",
+      "Merged separate homepage layouts into a responsive HTML and CSS interface, adapting navigation and question browsing for phones, tablets, and desktop screens.",
+      "Implemented JavaScript and Firestore bookmarking so signed-in students can save questions, remove saved items, and browse their bookmarked course discussions.",
+      "Added bookmarked-question previews and a Firestore-backed points display to the homepage, giving students quick access to saved discussions and their contribution score.",
     ],
+    outcome:
+      "Contributed a responsive homepage and persistent saved-question workflow to the team's application. The site link opens the course project, and the repository includes the shared implementation.",
     tags: ["JavaScript", "HTML", "CSS", "Bootstrap 5", "Firebase", "Firestore"],
     github: "https://github.com/davivargas/AskMii",
     live: "https://comp1800-bby22.web.app/",
@@ -72,12 +91,17 @@ const projects: Project[] = [
   {
     name: "COMP 2522 Java Term Project",
     description:
-      "Built three Java games solo for BCIT's COMP 2522 term project: a console geography quiz, a number-ordering game, and Quantum Sum, an original JavaFX dice-and-grid puzzle designed with ChatGPT per the course brief.",
+      "A Java game collection combining a geography quiz, a number-ordering game, and Quantum Sum, a JavaFX dice-and-grid puzzle, behind one menu.",
+    context: "Solo BCIT course project · ChatGPT-assisted Quantum Sum",
+    problem:
+      "The collection combines console and graphical games. Players need to return to a shared menu and open another game without restarting the application.",
     details: [
-      "Structured the three games behind one console menu that calls a shared Game interface, with both JavaFX games extending a common AbstractGame base and loading their own CSS stylesheets.",
-      "Kept both JavaFX games relaunchable from that menu in one JVM by starting the platform once, disabling implicit exit, and blocking on a CountDownLatch until the window closes.",
-      "Wrote 35 JUnit 5 tests across eight classes for Quantum Sum, covering dice distribution over 10,000 rolls, subset-sum edge cases, grid collapse, and score-file parsing with a corrupted entry.",
+      "Built three Java games behind a shared menu, using a common Game interface and abstract base class to organize console and JavaFX implementations.",
+      "Managed the JavaFX lifecycle with a shared runtime and CountDownLatch synchronization, allowing players to relaunch graphical games from the console menu without restarting the application.",
+      "Wrote JUnit tests for Quantum Sum's move validation, grid updates, dice behavior, and score-file parsing, including corrupted-input cases.",
     ],
+    outcome:
+      "Implemented a common launch-and-return flow for all three games, with tests for Quantum Sum's rules and stored scores. Quantum Sum was developed with documented ChatGPT assistance as part of the course brief.",
     tags: ["Java", "JavaFX", "JUnit 5", "CSS", "ChatGPT"],
     github: "https://github.com/davivargas/COMP2522-TermProject",
     youtube: "https://www.youtube.com/watch?v=w8x6IFrAGjE&list=PLV89nqIpKBepSudbVfBftERuKC3zZVGmM",
@@ -163,6 +187,10 @@ export const Projects = () => {
                         <ArrowUpRight className="h-4 w-4 transition-smooth group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </DialogTrigger>
                     </h3>
+
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {p.context}
+                    </p>
 
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {p.description}
@@ -261,7 +289,13 @@ export const Projects = () => {
                     )}
                   </DialogHeader>
 
-                  <div className="space-y-4">
+                  <div className="space-y-5">
+                    <p className="text-xs leading-relaxed text-muted-foreground">{p.context}</p>
+
+                    <DialogDescription className="text-sm leading-relaxed text-foreground/85">
+                      {p.description}
+                    </DialogDescription>
+
                     <div className="flex flex-wrap gap-1.5">
                       {p.tags.map((t) => (
                         <Badge
@@ -273,10 +307,6 @@ export const Projects = () => {
                         </Badge>
                       ))}
                     </div>
-
-                    <p className="text-sm leading-relaxed text-foreground/85">
-                      {p.description}
-                    </p>
 
                     {/* Radix mounts dialog content only while open, so the player is
                         never loaded on page render and stops when the dialog closes. */}
@@ -293,13 +323,24 @@ export const Projects = () => {
                       </div>
                     )}
 
-                    {p.details && p.details.length > 0 && (
+                    <div className="space-y-2">
+                      <h3 className="text-sm font-semibold">Why this project</h3>
+                      <p className="text-sm leading-relaxed text-foreground/85">{p.problem}</p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="text-sm font-semibold">My contribution</h3>
                       <ul className="list-disc space-y-3 pl-5 text-sm leading-relaxed text-foreground/85 marker:text-primary">
                         {p.details.map((detail) => (
                           <li key={detail}>{detail}</li>
                         ))}
                       </ul>
-                    )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="text-sm font-semibold">Outcome</h3>
+                      <p className="text-sm leading-relaxed text-foreground/85">{p.outcome}</p>
+                    </div>
                   </div>
                 </DialogContent>
               </Dialog>
