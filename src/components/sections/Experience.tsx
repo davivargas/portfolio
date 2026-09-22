@@ -18,14 +18,15 @@ const experiences = [
     // Previous summary, kept for reference:
     // "Contracted by a courier company to replace its Excel and VBA operations system. Built the driver proof-of-delivery app that works a full shift offline, with the admin portal designed and next to build."
     summary:
-      "Contracted by a courier company to replace its Excel and VBA operations system. Built both halves: the offline driver app for proof of delivery and the admin portal the office dispatches and bills from.",
+      "Replaced a courier company's Excel and VBA operations system with an offline driver app and an admin portal for orders, dispatch, and billing, integrated with QuickBooks and Pumble.",
     details: [
-      "Built the admin portal that runs the courier's day, ten screens where the office takes orders, watches a live board, dispatches drivers and bills customers, retiring a 13,855-order Excel and VBA workbook.",
-      "Built the driver Progressive Web App (React 19, TypeScript, IndexedDB) so couriers capture photos, signatures and GPS without signal, uploading through an idempotent outbox verified by a full-shift offline end-to-end test.",
-      "Replaced clipboard-and-text-message dispatch with a real-time offer pipeline: one transactional function sends the assignment, Web Push reaches the driver's phone, and accept or decline lands back on the board live.",
-      "Rebuilt the spreadsheet's rate calculator as a PostgreSQL function pricing every order from yearly rate cards, 74 zoned cities and weekly fuel surcharges, persisted per order so invoices stay auditable.",
-      "Integrated QuickBooks and Pumble so issued invoices post straight to the accounting ledger with payment status returning by webhook, and dispatch messages reach drivers in the company's chat without retyping.",
-      "Locked the platform down with row-level security on every table and a schema that stores no card data, verified by 561 database test assertions and walked screen by screen with the company owner.",
+      "Built a ten-screen React and TypeScript portal for courier orders, dispatch, and billing, replacing an Excel and VBA workflow containing 13,855 legacy orders.",
+      "Built a React and TypeScript Progressive Web App (PWA) that stores delivery photos, signatures, and GPS data in IndexedDB and queues uploads while couriers work offline.",
+      "Built a GitHub Actions pipeline that recreates a Docker-based Supabase database, replays 38 migrations, and runs database and browser tests before deploying both apps to Cloudflare Pages.",
+      "Replaced text-message dispatch with PostgreSQL-backed assignments and Deno Web Push notifications, returning driver acceptance or rejection to the admin board in real time.",
+      "Rebuilt courier pricing in PostgreSQL using annual rate cards, zoning for 74 cities, and weekly fuel surcharges, preserving per-order calculations for auditable invoices.",
+      "Integrated QuickBooks invoicing and payment-status webhooks with the courier platform, alongside Pumble dispatch notifications, reducing manual transfer of accounting and delivery information.",
+      "Added PostgreSQL row-level security policies and pgTAP tests covering cross-driver access to orders, delivery records, and stored media.",
       // Previous bullets, kept for reference:
       // "Built a driver proof-of-delivery app for a courier company replacing its Excel and VBA operations system, and designed the admin portal data model from 13,800+ legacy orders and their VBA modules.",
       // "Built an offline-first Progressive Web App (React 19, TypeScript, IndexedDB) that saves proofs locally and uploads with idempotent retries, verified by end-to-end tests that complete a full shift offline without duplicates.",
@@ -34,7 +35,7 @@ const experiences = [
       // "Built a GitHub Actions pipeline that replays every migration on a fresh Supabase stack and runs 850+ browser tests plus 29 Playwright end-to-end tests with accessibility gates, so policy mistakes fail before reaching drivers.",
       // "Worked directly with the company owner to turn field feedback into spec changes before code and verified each screen with them on real phones in both themes",
     ],
-    tags: ["TypeScript", "React", "PWA", "Supabase", "PostgreSQL", "IndexedDB", "Playwright", "GitHub Actions"],
+    tags: ["TypeScript", "React", "PWA", "Supabase", "PostgreSQL", "IndexedDB", "Playwright", "GitHub Actions", "Cloudflare Pages"],
   },
   {
     period: "May 2026\nto Aug 2026",
@@ -43,14 +44,14 @@ const experiences = [
     // Previous summary, kept for reference:
     // "Re-architected an internal operations dashboard into a PostgreSQL-backed data platform with scheduled Asana and Linear ingestion, self-healing health checks, and a family of React analytics views, then handed it over with full operator runbooks.",
     summary:
-      "Internal performance platform for the team building custom AI agents at Zip. Built the six Linear-backed dashboards that report time in review, estimate accuracy, and contractor cost, over a PostgreSQL sync pipeline.",
+      "Built six dashboards for Zip's custom AI engineering team to review ticket progress, estimation accuracy, and contractor costs using synchronized Linear data.",
     details: [
-      "Designed and built 35 REST endpoints and six Linear-backed dashboard views (React 19, TypeScript, shadcn/ui), giving engineering managers per-engineer KPIs, project rollups, and estimate accuracy that Linear's issue views cannot report.",
-      "Built the scheduled ingestion behind it, syncing ~10K tickets from Linear's GraphQL and Asana's REST APIs with cursor checkpoints, rate-limit retries, and daily drift audits that catch missed updates.",
-      "Added a health-monitoring system with 11 checks (data drift, stuck syncs, API reachability) that auto-runs reconciliation and shows non-engineers a banner with Claude-generated root-cause explanations.",
-      "Shipped a quarterly contractor report on Zip's February fiscal calendar that exports to Excel with live formulas and native charts, so leadership can re-run cost and savings figures at new rates.",
-      "Migrated the platform from live Asana API calls to a PostgreSQL and Redis read layer (Node.js, TypeScript, Prisma), cutting stale-data windows from 12 hours to 10 minutes.",
-      "Wrote 58 test suites (Vitest, Jest, Testcontainers against real PostgreSQL) and nine operator runbooks so Zip's team could run the platform after the internship",
+      "Built six React and TypeScript dashboards backed by 35 REST endpoints for Linear ticket data, giving engineering managers views of project progress, review delays, estimation accuracy, and contractor costs.",
+      "Built scheduled ingestion for approximately 10,000 Linear and Asana tickets using GraphQL and REST APIs, with cursor checkpoints, rate-limit retries, and daily reconciliation checks.",
+      "Added 11 health checks for drift, stalled synchronization, and API availability, with reconciliation triggers and Claude-generated explanations of likely causes for dashboard users.",
+      "Built quarterly contractor reports using Zip's fiscal calendar, with Excel formulas and charts that recalculate cost estimates when managers change rates.",
+      "Migrated dashboard reads to PostgreSQL and Redis, reducing modal-cache expiration from 12 hours to 10 minutes and invalidating cached results after successful synchronization.",
+      "Added PostgreSQL integration tests with Testcontainers and wrote deployment, scheduling, and recovery runbooks to support handover to Zip's maintainers.",
       // Previous bullets, kept for reference:
       // "Migrated an operations dashboard from live Asana API calls to a PostgreSQL and Redis read layer (Node.js, TypeScript, Prisma), cutting stale-data windows from 12 hours to 10 minutes.",
       // "Built a scheduled ingestion service that syncs ~10K tickets from the Asana and Linear project-tracking APIs with cursor checkpoints, rate-limit retries, and daily drift audits, so dashboards stay current without manual refreshes.",
@@ -66,14 +67,12 @@ const experiences = [
     role: "Software Engineer in Test Intern",
     company: "Insurance Corporation of British Columbia (ICBC)",
     summary:
-      "Worked on automated testing and internal tooling for a large enterprise platform migration to cloud, contributing to reliable release workflows with developers and product teams.",
+      "Developed automated tests and Python tooling for ICBC's insurance-platform cloud migration, working with developers and product teams on release validation.",
     details: [
-      "Designed and implemented automated end-to-end tests validating user workflows, backend APIs, and data flows during the migration of a large enterprise insurance platform to the cloud.",
-      "Developed and maintained 70+ automated tests using JavaScript, TestCafe, Gherkin, and Cucumber, validating UI workflows and backend API responses across production releases.",
-      "Integrated automated tests into TeamCity CI/CD pipelines with parallel execution, reducing local execution requirements and decreasing test development time by ∼40%.",
-      "Developed Python automation tooling to extract and consolidate test data across multiple sources previously reviewed manually, saving the team 10+ hours per week.",
-      "Collaborated with developers and product teams using Jira to analyze user stories, raise and track defects, and discuss test results during the cloud migration process.",
-      "Increased automated test coverage by integrating previously untested UI components and user scenarios into the automation framework.",
+      "Developed and maintained more than 70 JavaScript and TestCafe regression tests for UI workflows and backend APIs, supporting ICBC's insurance-platform cloud migration.",
+      "Integrated parallel automated tests into TeamCity continuous integration and delivery (CI/CD) pipelines, reducing reliance on local runs and cutting test development time by approximately 40%.",
+      "Automated test-data extraction and consolidation across multiple sources with Python, replacing manual review steps and saving the team more than 10 hours per week.",
+      "Extended automated test coverage to previously untested UI components and user scenarios, using Jira to review requirements and track defects with developers and product teams.",
     ],
     tags: ["JavaScript", "Python", "Jira", "CI/CD", "TestCafe", "Cucumber"],
   },
@@ -82,11 +81,11 @@ const experiences = [
     role: "Ballast Control Operator (BCO)",
     company: "Petrobras",
     summary:
-      "Worked in a safety critical offshore environment, coordinating operations, supervising a small team, and using automation to improve workflows and reduce manual work.",
+      "Coordinated offshore ballast operations, supervised four operators, and used Python and VBA to automate recurring procedures.",
     details: [
-      "Automated operational procedures using Python and VBA, reducing manual errors by 15% and improving workflow efficiency.",
-      "Coordinated ballast and stability operations in an offshore setting where precision, communication, and safety were non-negotiable.",
-      "Supervised a small team of 4 and helped keep daily operations organized under changing operational conditions.",
+      "Automated offshore operational procedures with Python and VBA, reducing manual errors by 15%.",
+      "Coordinated ballast and vessel-stability operations with offshore teams, communicating operational changes and monitoring systems during daily procedures.",
+      "Supervised four offshore operators, coordinating daily tasks and communication as operational conditions changed.",
     ],
     tags: ["Python", "VBA", "Power BI", "SAP", "PI-ProcessBook", "Operations", "Leadership"],
   },
@@ -95,11 +94,10 @@ const experiences = [
     role: "Technical Finance Intern",
     company: "LiftBank",
     summary:
-      "Built internal automation and reporting tools to process financial data, reduce repetitive work, and support operational efficiency in a startup environment.",
+      "Built finance-data automation and reporting tools with Python and VBA to support recurring operational and executive reports.",
     details: [
-      "Automated routine finance tasks and reports saving the team 20+ hours weekly.",
-      "Worked with operational data to improve visibility into recurring processes and support leadership in quicker decision-making.",
-      "Learned how small internal tools can have an outsized effect in a fast-moving team.",
+      "Automated recurring finance tasks and reports, saving the team more than 20 hours per week.",
+      "Built internal reports from operational data to help leadership review recurring finance processes.",
     ],
     tags: ["Python", "VBA", "Power BI", "Selenium", "Excel", "Reporting"],
   },
