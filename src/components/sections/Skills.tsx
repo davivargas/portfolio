@@ -24,7 +24,7 @@ const skillGroups = [
   },
   {
     category: "Cloud & DevOps",
-    items: ["Docker", "AWS", "GitHub Actions", "TeamCity", "CI/CD", "Git", "GitHub", "Bitbucket", "Jira"],
+    items: ["Docker", "AWS", "Cloudflare Pages", "Railway", "GitHub Actions", "TeamCity", "CI/CD", "Git", "GitHub", "Bitbucket", "Jira"],
   },
   {
     category: "Analytics",
