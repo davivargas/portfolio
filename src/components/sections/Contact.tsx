@@ -3,6 +3,8 @@ import { EmailOptions } from "@/components/EmailOptions";
 import { SectionHeading } from "../SectionHeading";
 import { Button } from "@/components/ui/button";
 
+const resumePdfUrl = `${import.meta.env.BASE_URL}DaviVargas_resume.pdf`;
+
 export const Contact = () => {
   return (
     <section id="contact" className="scroll-mt-24 py-16 lg:py-24">
@@ -20,7 +22,7 @@ export const Contact = () => {
           </Button>
         </EmailOptions>
         <Button asChild variant="outline" size="lg" className="rounded-full">
-          <a href="#" download>Download résumé</a>
+          <a href={resumePdfUrl} download="DaviVargas_resume.pdf">Download resume</a>
         </Button>
       </div>
 

@@ -29,6 +29,12 @@ jobs:
 
       - run: npm run test
 
+      - name: Compile SWE resume PDF
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: swe_resume.tex
+          working_directory: resumes
+
       # A <user>.github.io repo is served at the root; any other repo under /<repo>/.
       - name: Build
         run: |
@@ -38,6 +44,7 @@ jobs:
           else
             export BASE_PATH="/$REPO/"
           fi
+          cp resumes/swe_resume.pdf public/DaviVargas_resume.pdf
           npm run build
           # Pages serves 404.html for unknown paths, which lets the router render NotFound.
           cp dist/index.html dist/404.html

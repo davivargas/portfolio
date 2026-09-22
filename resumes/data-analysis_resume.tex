@@ -1,0 +1,272 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+\usepackage{lmodern}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Davi Vargas} \\ \vspace{1pt}
+    \small 236-788-0524 $|$ \href{mailto:davi.vargas7@gmail.com}{\underline{davi.vargas7@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/davi-vargas}{\underline{www.linkedin.com/in/davi-vargas/}} \\[4pt]
+    \href{https://github.com/davivargas}{\underline{github.com/davivargas}} $|$
+    \href{https://davivargas.github.io/portfolio/}{\underline{davivargas.github.io/portfolio}}
+\end{center}
+
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+  {Software Developer (Fixed-term Contract)}{August 2026 - December 2026}
+  {Sprinter Delivery}{Coquitlam, BC}
+  \resumeItemListStart
+
+    \resumeItem{Profiled 13,855 legacy Excel orders across 105 columns, identifying deleted-row artifacts and inconsistent customer records to inform a replacement \textbf{PostgreSQL} schema}
+
+    \resumeItem{Built CSV order imports that normalize legacy column names, validate row values, and report saved, duplicate, or invalid records when loading data into \textbf{PostgreSQL}}
+
+    \resumeItem{Rebuilt the spreadsheet's rate calculator as a \textbf{PostgreSQL} function pricing every order from yearly rate cards, 74 zoned cities, and weekly fuel surcharges, persisted per order so invoices stay auditable}
+
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Software Development Intern}{May 2026 - August 2026}
+  {Zip}{Vancouver, BC}
+  \resumeItemListStart
+
+    \resumeItem{Built six \textbf{React} and \textbf{TypeScript} dashboards with \textbf{Recharts} to analyze \textbf{Linear} ticket progress, engineer workload, estimation accuracy, and contractor costs}
+
+    \resumeItem{Built quarterly contractor reports using Zip's fiscal calendar, with Excel formulas and charts that recalculate cost estimates when managers change rates}
+
+    \resumeItem{Reconstructed ticket status histories as \textbf{PostgreSQL} time spans and surfaced aging-review queues so managers could identify work waiting for review}
+
+    \resumeItem{Added a \textbf{least-squares regression} of actual versus estimated hours, with a confidence band, to help engineering managers inspect estimation bias across completed tickets}
+
+    \resumeItem{Built a \textbf{PostgreSQL} reporting layer for approximately 10,000 \textbf{Linear} and Asana tickets, with ten-minute ingestion schedules and daily audits for missing or stale records}
+
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Software Engineering Intern (Test Automation)}{May 2025 - December 2025}
+  {Insurance Corporation of British Columbia (ICBC)}{Vancouver, BC}
+  \resumeItemListStart
+
+    \resumeItem{Automated test-data extraction and consolidation across multiple sources with \textbf{Python}, replacing manual review steps and saving the team more than 10 hours per week}
+
+    \resumeItem{Worked with developers and product teams in \textbf{Jira} to translate user stories into test cases, investigate failures, track defects, and validate fixes during ICBC's cloud migration}
+
+    % \resumeItem{Designed and implemented automated end-to-end tests validating user workflows, backend APIs, and data flows during the migration of a large enterprise insurance platform to the cloud}
+
+    % \resumeItem{Developed and maintained 70+ automated tests using \textbf{JavaScript, TestCafe, Gherkin, and Cucumber}, validating UI workflows and backend API responses across production releases}
+
+    % \resumeItem{Integrated automated tests into \textbf{TeamCity CI/CD pipelines} with parallel execution, reducing local execution requirements and decreasing test development time by $\sim$40\%}
+
+  \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+  %   \resumeSubheading
+  %       {Ballast Control Operator}{Oct 2020 - Mar 2025}
+  %         {Petrobras S.A.}{Brazil}
+  %         \resumeItemListStart
+
+  %       \resumeItem{Automated operational procedures using \textbf{Python and VBA}, reducing manual errors by 15\% and improving workflow efficiency}
+
+  %       \resumeItem{Monitored and controlled ballast and vessel stability systems supporting safe offshore operations in a high-reliability, safety-critical environment}
+
+  %       \resumeItem{Supervised a team of 4 operators, coordinating communication and operational tasks during complex maritime procedures}
+
+  % \resumeItemListEnd
+
+  %   \resumeSubheading
+  % {Technical Finance Intern}{Dec 2019 - Sep 2020}
+  % {LiftBank (Startup)}{Brazil}
+  % \resumeItemListStart
+
+  %   \resumeItem{Developed internal data processing tools using \textbf{Python (PyAutoGUI, Selenium)} and \textbf{VBA} to automate financial dataset processing, improving operational efficiency by 20\%}
+
+  %   \resumeItem{Automated executive reporting by consolidating financial datasets and generating reports, saving approximately 5 hours per week}
+
+  % \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects \& Hackathons}
+    \resumeSubHeadingListStart
+      \item
+        \textbf{Fall Line} \textbar\
+        \href{https://github.com/davivargas/Fall-Line}{github.com/davivargas/Fall-Line}
+        \textbar\
+        \href{https://www.youtube.com/watch?v=Ut6WIyQr13k}{youtu.be/Ut6WIyQr13k}
+        \vspace{-4pt}
+        \resumeItemListStart
+          \resumeItem{Built an offline snowboarding tracker that turns GPS sessions into runs, lifts, and stops using a \textbf{Python} hidden Markov model backed by \textbf{PostgreSQL}}
+          \resumeItem{Built a \textbf{Python} import for \textbf{OpenStreetMap}-derived ski-resort data, preserving inactive records when sources disappear and routing uncertain resort matches for manual review}
+      \resumeItemListEnd
+      % \item
+      %   \textbf{PullerBear} \textbar\
+      %   \href{https://github.com/davivargas/PullerBear}{github.com/davivargas/PullerBear}
+      %   \textbar\
+      %   \href{https://www.youtube.com/watch?v=YWMgsa5zrdI}{youtu.be/YWMgsa5zrdI}
+      %   \vspace{-4pt}
+      %   \resumeItemListStart
+      %     \resumeItem{Led a 4-person team during the \textbf{BCIT Hackathon} to build PullerBear using \textbf{TypeScript}, the \textbf{VS Code Extension API}, and \textbf{Git} to detect when a local branch is behind remote and summarize incoming commits with AI before pull}
+      %     \resumeItem{Developed a \textbf{React}-based sidebar interface with \textbf{OpenRouter AI} integration that enables users to review repository changes and ask follow-up questions directly inside VS Code}
+      % \resumeItemListEnd
+      % \item
+      %   \textbf{AskMii} \textbar\
+      %   \href{https://github.com/davivargas/AskMii}{github.com/davivargas/AskMii}
+      %   \vspace{-4pt}
+      %   \resumeItemListStart
+      %       \resumeItem{Developed frontend features for a collaborative web application using \textbf{JavaScript, HTML, CSS, and Bootstrap}, translating \textbf{Figma} designs into responsive interfaces}
+      %       \resumeItem{Implemented user authentication and integrated a \textbf{Firebase NoSQL database} to manage application data and user-generated content}
+      %       \resumeItem{Designed and implemented responsive UI components and client–server data interactions in a team-based Agile project}
+      % \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {British Columbia Institute of Technology}{Expected December 2026}
+      {Computer Systems Technology Diploma $|$ \textup{GPA: 4.0/4.0 (BCIT GPA 95\%)}}{Vancouver, BC}
+    \resumeSubheading
+      {Federal University of Espirito Santo}{Graduated January 2021}
+      {Bachelor's in Mechanical Engineering}{Brazil}
+  \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+
+     \textbf{Languages}{: SQL, Python, R, TypeScript, JavaScript, VBA, Java} \\
+
+     \textbf{Data \& BI Tools}{: Power BI, Advanced Excel (formulas, native charts), Recharts, Pandas, NumPy, Matplotlib} \\
+
+     \textbf{Databases}{: PostgreSQL, MySQL, SQL Developer, Supabase, Redis, Firebase (NoSQL)} \\
+
+     \textbf{Developer Tools}{: Git, GitHub, Prisma, Node.js, React.js, Docker, Jira} \\
+
+     \textbf{Concepts}{: KPI Reporting, Data Profiling, Data Cleaning, Data Modelling, Regression Analysis, ETL / ELT, Data Validation, Data Quality, Exploratory Data Analysis (EDA), Data Visualization, Agile Methodology}
+
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
