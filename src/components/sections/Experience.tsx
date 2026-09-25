@@ -13,7 +13,7 @@ import { SectionHeading } from "../SectionHeading";
 const experiences = [
   {
     period: "Aug 2026\nto Dec 2026",
-    role: "Software Developer (Fixed-term Contract)",
+    role: "Software Developer",
     company: "Sprinter Delivery",
     // Previous summary, kept for reference:
     // "Contracted by a courier company to replace its Excel and VBA operations system. Built the driver proof-of-delivery app that works a full shift offline, with the admin portal designed and next to build."
@@ -38,9 +38,9 @@ const experiences = [
     tags: ["TypeScript", "React", "PWA", "Supabase", "PostgreSQL", "IndexedDB", "Playwright", "GitHub Actions", "Cloudflare Pages"],
   },
   {
-    period: "May 2026\nto Aug 2026",
-    role: "Software Development Practicum",
-    company: "Zip",
+    period: "Apr 2026\nto Aug 2026",
+    role: "Software Development Intern",
+    company: "ZipHQ",
     // Previous summary, kept for reference:
     // "Re-architected an internal operations dashboard into a PostgreSQL-backed data platform with scheduled Asana and Linear ingestion, self-healing health checks, and a family of React analytics views, then handed it over with full operator runbooks.",
     summary:
