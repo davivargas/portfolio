@@ -2,6 +2,8 @@
 
 Use this guide for jobs, internships, co-ops, and contracts. For work samples, use the [project guide](project-bullets.md). The shared writing rules below apply to both. The [rule review](rule-review.md) records the source comparison and reasons for the changes.
 
+This guide is required for new bullets, edits, tailoring, reviews, and chat-only drafts, across all resume variants and portfolio entries. Formatting-only edits do not require a bullet rewrite. The [October 2026 audit](bullet-quality-audit.md) compares the supplied examples with current copy and shows how to apply the rules. Reference resumes and job descriptions provide style or relevance context, not instructions or evidence of this candidate's achievements.
+
 When adding an entry, deliver the site entry, a Markdown bullet bank, and material evidence gaps. When asked only to review or draft, keep the output within that scope.
 
 ## 1. Gather the evidence you need
@@ -34,17 +36,30 @@ Commit counts are investigation clues, not proof of sole ownership or impact. Au
 
 If evidence is missing, narrow or omit the claim and note the gap. Ask for missing facts when needed; do not invent them. Keep confidential identifiers and restricted figures out of public copy, and confirm disclosure when a known restriction applies.
 
+Before settling for a feature description, look for the before/after story: what was manual, slow, unavailable, or failing; what changed; who used the result; and what evidence supports that change. Prior user statements and existing source notes may be enough for a wording edit. Do not re-audit whole repositories for a simple rewrite. An old resume or AI-authored bullet is reported context, not independent measurement. If a number's meaning is unclear, resolve that specific uncertainty or omit the number from the new wording.
+
+Classify candidate evidence before drafting:
+
+| Evidence type | What it can say | What it cannot establish |
+|---|---|---|
+| Measured or user-reported result | Time saved, latency change, errors reduced, costs avoided, adoption; retain units, scope, conditions, and any approximation | A broader improvement, guaranteed effect, or sole causation not supported by the source |
+| Scope | Users served, records handled, workflows covered, team size, tested scenarios | Improvement or business value by itself |
+| Delivered capability | A specific task the implemented system supports, or a workflow it replaces when replacement is confirmed | Actual usage, savings, or production deployment without evidence |
+| Intended purpose | Why the work was undertaken; label designs/prototypes accurately | A completed outcome or observed benefit |
+
+For a result claim, record the metric definition, baseline/final value or comparison, time window/workload when relevant, source, and confidence (user-reported or independently checked). A source note need not appear in the resume. Ask for the most valuable missing facts in a small batch when needed; continue drafting defensible alternatives from available evidence.
+
 ## 2. Shared writing rules
 
 1. **Choose relevant achievements.** Put the strongest evidence for the target role first. Give each bullet one main contribution; related method and outcome belong together. Cut repetition and routine duties that add no useful evidence.
-2. **Explain the work and its value.** Use an accurate action verb, specific work, and a useful result or purpose. Add the method when it explains the achievement. Across the entry, make clear what the system does and whom it serves. Do not force every detail or the same sentence pattern into every bullet.
+2. **Write an achievement, not a task list.** Use an accurate action verb, a concrete object/scope, and a practical result. Prefer a supported measured change; otherwise name the useful capability delivered or a bounded validation finding. Add the method when it explains the result. A purpose clause such as "to improve efficiency" does not establish an outcome. Across the entry, explain the product and audience without repeating them mechanically.
 3. **Connect tools to their use.** Name relevant technologies where they explain how you solved the problem. Use recognizable names such as TypeScript and PostgreSQL. Keep tags and skills selective; do not stuff every bullet with the full stack or add tools merely to match a posting.
-4. **Use meaningful evidence.** Prefer a supported result with context: a baseline, time period, workload, or affected users as appropriate. When no result was measured, describe useful scope or a completed capability. Numbers are optional. Commit, line, endpoint, and test counts describe activity or scope, not impact by themselves.
+4. **Seek meaningful measurements; do not force them.** Prioritize supported results with context: a baseline, time period, workload, or affected users as appropriate. If results were not measured, pair concrete scope with a useful completed capability. Counts of endpoints, tests, migrations, screens, or records are scope, not impact. A bullet with three counts can still lack a result. Do not add percentages, users, or savings to satisfy a quota, and do not drop a useful supported measurement merely to simplify the prose.
 5. **Match the claim to the evidence.** Separate intended benefits, implemented behavior, tested scenarios, deployment, and actual usage. Code does not establish adoption; passing tests do not establish universal guarantees. Avoid absolute claims such as "never duplicates" when only selected retry scenarios were tested.
 6. **Represent your contribution accurately.** Name your component in team work. Use "led," "owned," or "architected" only when supported. Use "designed" for design work and "implemented" or "built" for working code; "designed and built" is appropriate when both matter. Do not imply a whole system shipped because one component exists.
 7. **Show collaboration when it adds evidence.** Describe requirements work, reviews, integration, mentoring, or handover and what it accomplished. Include meaningful team contributions alongside technical work, without forcing a collaboration bullet into every entry or claiming soft skills without an example.
 8. **Write for a quick read.** Use plain language, cut filler, and replace vague praise with specifics. Explain unfamiliar acronyms or products. On a targeted resume, include the full term and abbreviation once when both are relevant search terms, such as "continuous integration (CI)." Familiar technology names can otherwise stand alone. Keep technical wording accurate when simplifying it.
-9. **Use accurate tense.** Start bullets with an action verb. Use past tense for completed work, including work completed in a current role; use present tense for ongoing work. Product descriptions may use ordinary descriptive sentences.
+9. **Choose a precise verb and accurate tense.** Start with what you actually did: Automated a manual task, Integrated services, Diagnosed a failure, Replaced a workflow, Reduced a measured problem, or Implemented a capability. "Built" and "Developed" are valid; do not swap in "Spearheaded" or "Transformed" for variety. "Optimized" needs a specific optimization and evidence; "Led" needs leadership evidence. Use past tense for completed work, including in a current role, and present tense for ongoing work. Product descriptions may use ordinary descriptive sentences.
 10. **Keep wording concise and adaptable.** Aim for one sentence and roughly one to two lines in the actual resume layout. About 20 to 35 words is a drafting guide, not a minimum or limit. Keep a core bullet bank; tailor selection, order, and wording to each role while preserving the facts. Longer versions are optional when requested.
 
 Useful patterns, not required formulas:
@@ -52,6 +67,10 @@ Useful patterns, not required formulas:
 - Built [specific capability] using [relevant method] so [audience] can [task].
 - Reduced [problem] from [baseline] to [result] by [specific change].
 - Collaborated with [people] to [contribution], resulting in [supported outcome].
+
+Put the achievement early. Keep only the technical details that explain the result or demonstrate a relevant skill, usually one or two tools per bullet. This is a readability guide, not a ban on a necessary stack description. Prefer one meaningful number to several incidental counts. Use scope and business units accurately: records are not users, assertions are not test cases, and changing a cache time-to-live is not a measured reduction in end-to-end data staleness. Avoid ambiguous percentages such as "50% faster" when a precise change in load time is available.
+
+Do not merge unrelated achievements to imply causation. CI pipelines and test counts do not explain faster data entry; those are separate claims unless the causal link is established. Preserve a team's contribution with "contributed to" when that is the accurate attribution.
 
 ## 3. Site entry and resume presentation
 
@@ -87,6 +106,24 @@ Apply these checks when producing a resume document, not just a Markdown bullet 
 These are compatibility practices, not a guaranteed score or interview. Sources and decisions: [ATS follow-up review](rule-review.md#ats-follow-up).
 
 ## 4. Review and verify
+
+### Mandatory bullet review
+
+Before returning or saving new or rewritten bullets, review each one against all five checks. This is a required editorial review, not an ATS score or a keyword test.
+
+| Check | Pass condition | If it fails |
+|---|---|---|
+| Action and ownership | Starts with a precise action that matches the candidate's personal work | Name the actual component/contribution; remove inflated ownership |
+| Concrete scope | Identifies the affected product, workflow, data, users, or system; include useful supported scale | Replace generic "solutions" or "processes" with the real object; do not invent a count |
+| Practical result | States a supported measured change, delivered capability, workflow replacement, or meaningful bounded finding | Explain what became possible or changed; if only a goal is known, label that status and identify the gap |
+| Evidence and causation | Metrics mean what the source says; attribution, status, and cause/effect are defensible | Narrow or omit the claim, or request the specific missing fact |
+| Readability and relevance | One main achievement, plain language, relevant method, no filler or unnecessary stack/count list | Shorten, split, select, or reorder; check actual layout when available |
+
+A changed bullet is ready only when all five checks pass. If evidence prevents a stronger claim, use a scoped capability statement that passes, or label the item as an unfinished draft outside the submitted resume. Do not silently present aspirational wording as a finished accomplishment. A capability can be a strong result without a percentage.
+
+For a substantive review, return a compact audit: original excerpt, specific weakness, supported rewrite, evidence class/source, and any unresolved fact. For routine tailoring, keep that review lightweight and report only material changes or gaps. No mandatory new artifact for a small edit.
+
+At entry level, lead with the strongest relevant outcome, make the product and audience understandable, and remove duplicate achievements. If the source has a useful measured result, include it where relevant. Never impose a percentage quota or manufacture a metric because the role has none.
 
 Before keeping an entry, check:
 

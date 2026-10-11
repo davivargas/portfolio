@@ -6,6 +6,8 @@ Follow the experience guide's [evidence workflow](experience-bullets.md#1-gather
 
 For resume documents, also follow the shared [ATS preparation](experience-bullets.md#ats-preparation-for-resume-files). Include project purpose, contributions, and relevant technologies in readable text; a repository link, video, or logo supplements that evidence.
 
+Apply the shared [mandatory bullet review](experience-bullets.md#mandatory-bullet-review) to every new or rewritten project bullet, including chat drafts and targeted resumes. A hackathon's team size, a dataset count, or a test total is scope. Connect it to what your contribution enabled, fixed, or demonstrated. If no usage or before/after measurement exists, a specific working capability is a valid result. Never borrow another candidate's user counts, performance gains, or awards.
+
 ## 1. Choose the evidence and story
 
 - Establish what the project does, whom it helps, and your contribution. For group work, identify your component and relevant collaboration instead of attributing the whole product to yourself.

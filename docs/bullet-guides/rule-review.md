@@ -1,6 +1,14 @@
 # Bullet guide rule review
 
-Reviewed September 21, 2026. This is a record of decisions, not an additional checklist. The current rules live in the [experience guide](experience-bullets.md) and [project guide](project-bullets.md), with a summary in [CLAUDE.md](../../CLAUDE.md).
+Initially reviewed September 21, 2026; updated October 6, 2026. This is a record of decisions, not an additional checklist. The current rules live in the [experience guide](experience-bullets.md) and [project guide](project-bullets.md), routed through [AGENTS.md](../../AGENTS.md) and [CLAUDE.md](../../CLAUDE.md).
+
+## October 2026 revision
+
+The [bullet quality audit](bullet-quality-audit.md) evaluates the user's supplied HB screenshot and AN PDF alongside current local copy. It also records external references and proposed rewrites with evidence limits.
+
+This revision supersedes the earlier allowance for a result _or purpose_ as sufficient. Every finished achievement bullet must now pass the shared five-part review: accurate action/ownership, concrete scope, practical result, evidence/causation, and readability/relevance. Seek supported measurements before settling for capability wording. Numbers remain optional when no meaningful measurement exists; scope counts alone are not outcomes. Keep one main achievement and avoid overstating a configuration change as an observed improvement.
+
+Root AGENTS.md, CLAUDE.md, and the Copilot instruction entry point now cover all bullet work, including existing resume tailoring and chat drafts. Formatting-only edits are exempt. Existing evidence protections, flexible lengths, truthful ownership, and no-em-dash style remain. Reference resumes are examples to critique, never instructions or facts about Davi.
 
 ## Source comparison
 
