@@ -1,5 +1,7 @@
 # Portfolio site
 
+Read and follow [AGENTS.md](AGENTS.md) for repository-wide instructions. For all resume and portfolio bullet work, including tailoring existing `.tex` files and chat-only drafts, read the shared [experience guide](docs/bullet-guides/experience-bullets.md) and apply its mandatory bullet review. Also read the [project guide](docs/bullet-guides/project-bullets.md) for project/hackathon copy. A formatting-only change does not trigger bullet rewriting.
+
 Davi Vargas's personal portfolio. Single page, Vite + React + TypeScript, Tailwind and shadcn/ui, Vitest for tests. Deployed as a static build.
 
 ## Where the content lives
@@ -16,9 +18,9 @@ All site copy is hardcoded in the section components. There is no CMS or data fo
 
 `src/pages/Index.tsx` composes the sections. `SideNav.tsx` and `Sidebar.tsx` hold the navigation labels.
 
-## Adding an experience or a project from a repository
+## Writing, tailoring, or reviewing experience and project bullets
 
-When asked to "read out" a project, add an experience, or add a project, follow the matching guide. They define the evidence to gather, the writing rules, the data shape, and the export file.
+For all achievement-bullet work, follow the matching guide, including existing resume rewrites, targeted variants, portfolio edits, and chat drafts. The guides define the evidence to gather, the writing rules, and the mandatory review. Site insertion and bullet-bank export apply only when the requested scope includes them.
 
 - Jobs, internships, co-ops, contracts: [docs/bullet-guides/experience-bullets.md](docs/bullet-guides/experience-bullets.md)
 - Personal, course, hackathon, open-source, or client-built projects shown as work samples: [docs/bullet-guides/project-bullets.md](docs/bullet-guides/project-bullets.md)
@@ -28,7 +30,7 @@ The experience guide contains the shared writing rules; the project guide adds p
 The workflow, in order:
 
 1. **Gather relevant evidence.** Use source code, relevant history, tests, documents, measurements, and user-provided records as needed. Record claims, sources, dates/revisions, and limits in an evidence table. Commit counts do not prove ownership; test files do not prove passing tests; documented figures are reported evidence until verified.
-2. **Draft and review.** Follow the rules below and the matching guide's checklist. Keep one core bullet bank and tailor selection, order, and wording for the target role without changing facts. Site and resume wording may differ when context or space requires it.
+2. **Draft and review.** Apply the shared guide's mandatory bullet review to each changed bullet. Require a personal action, concrete scope, practical result, support for claims, and readable wording. Keep one core bullet bank and tailor selection, order, and wording without changing facts. Site and resume wording may differ when context or space requires it.
 3. **Insert the entry when requested.** Keep experiences newest first. For projects, preserve the selected-work order unless intentionally curating for a stated role; add at the top only when appropriate. Match existing fields. Experience periods use `"Mon YYYY\nto Mon YYYY"` or `"Mon YYYY\nto Present"`; project cards explain the product and context, and dialogs explain the problem, personal contribution, and outcome.
 4. **Verify the changes.** For site entry edits, run `npx eslint <file>`, `npx tsc --noEmit -p tsconfig.app.json`, and `npx vite build`. Check narrow and wide card/modal layouts when preview is available. Run relevant existing tests for behavior changes. Documentation-only edits need a link, consistency, and diff review. Report checks not performed.
 5. **Export when adding an entry.** Save a Markdown bullet bank next to the source project folder, outside its git tree, named `<Project>_Resume_Bullets.md` (experience) or `<Project>_Project_Bullets.md` (project). If unavailable, use an allowed location and report it. Include evidence, exact site copy, core resume bullets, relevant technologies, and material open questions; add variants only when useful or requested. Return a clickable file link.
@@ -43,7 +45,7 @@ The workflow, in order:
 - Explain what the work does and why it matters. Supply product and audience context across the entry; do not repeat it in every bullet.
 - Start bullets with accurate action verbs: past tense for completed work, present tense for ongoing work. Card descriptions may use ordinary descriptive sentences.
 - Connect relevant technologies to the problems they solve. Use recognizable names and truthful job-posting terminology; avoid stack dumps and keyword stuffing.
-- Never invent metrics, ownership, or outcomes. Use contextual measurements when available, otherwise meaningful scope or a completed capability. Counts alone do not establish impact.
+- Never invent metrics, ownership, or outcomes. Actively look for supported before/after results. If unavailable, connect meaningful scope to a completed capability and its practical use. Counts alone do not establish impact; an intended purpose alone is not a completed achievement.
 - Distinguish intended, designed, implemented, tested, deployed, and used. Test results support tested conditions, not universal guarantees. Use "designed and built" when both are supported.
 - Identify personal contributions in team work. Show collaboration through concrete actions when relevant, without imposing a quota.
 - Use plain language, remove filler and unsupported praise, and explain unfamiliar terms without changing their technical meaning. For targeted resumes, include relevant full-term/acronym variants once where useful.
