@@ -26,3 +26,4 @@ dist-ssr
 !resumes/
 !resumes/*.tex
 .playwright-mcp/
+resumes/ALL_resume.tex
