@@ -23,7 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 *.tex
-!resumes/
-!resumes/*.tex
 .playwright-mcp/
 resumes/ALL_resume.tex
+resumes/cover_letter*.tex

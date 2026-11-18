@@ -50,7 +50,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% Ensure that generated PDF is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
@@ -99,11 +99,6 @@
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
     \textbf{\Huge \scshape Davi Vargas} \\ \vspace{1pt}
     \small \href{https://davivargas.github.io/portfolio/}{\underline{Portfolio}} $|$
@@ -112,6 +107,14 @@
     \href{mailto:davi.vargas7@gmail.com}{\underline{davi.vargas7@gmail.com}} $|$ 236-788-0524
 \end{center}
 
+
+%-----------SUMMARY-----------
+\section{Summary}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     Software developer with a Bachelor's in Mechanical Engineering and 4+ years in offshore oil and gas operations as a Ballast Control Operator at Petrobras. Builds production web applications with \textbf{React.js}, \textbf{TypeScript}, \textbf{Node.js}, and \textbf{PostgreSQL}, backed by automated testing, CI/CD, and Docker containerization. Brings engineering fundamentals and field experience to software for energy-industry engineering and operational decisions.
+    }}
+ \end{itemize}
 
 
 %-----------EXPERIENCE-----------
@@ -123,11 +126,14 @@
   {Sprinter Delivery}{Coquitlam, BC}
   \resumeItemListStart
 
+    % FUNDAMENTAL
     \resumeItem{Architected and developed a custom \textbf{React.js}, \textbf{TypeScript}, and \textbf{PostgreSQL} portal to automate a legacy 13.8K-order VBA workflow, slashing per-order administration time by 33\%}
 
-    \resumeItem{Replaced paper proof of delivery (POD) with an offline \textbf{React.js} PWA using \textbf{IndexedDB} and queued uploads, reducing missing delivery POD records by 95\%}
+    \resumeItem{Restricted each driver to their own orders, delivery records, and stored media by writing \textbf{PostgreSQL} row-level security policies, verified by \textbf{pgTAP} isolation tests that run in CI on every pull request}
 
     \resumeItem{Integrated \textbf{QuickBooks} invoicing and payment-status webhooks with courier billing, automating over 30 client invoices per month and saving $\sim$8 hours of monthly billing work}
+
+    \resumeItem{Replaced paper proof of delivery (POD) with an offline \textbf{React.js} PWA using \textbf{IndexedDB} and queued uploads, reducing missing delivery POD records by 95\%}
 
   \resumeItemListEnd
 
@@ -136,19 +142,24 @@
   {ZipHQ}{Vancouver, BC}
   \resumeItemListStart
 
+    % FUNDAMENTAL
     \resumeItem{Built seven \textbf{React} and \textbf{TypeScript} dashboards backed by 35 JWT-secured \textbf{Node.js} \textbf{REST} endpoints, letting 8+ managers track workload, ticket progress, and estimates for 50+ engineers}
 
-    \resumeItem{Developed \textbf{Vitest}, \textbf{Jest}, and \textbf{Cypress} tests with \textbf{PostgreSQL} integration tests through \textbf{Testcontainers}, catching 15+ regressions before production and increasing backend coverage from 50\% to 90\%}
+    \resumeItem{Reviewed and merged 9 \textbf{GitHub} pull requests from 3 teammates in a 17-contributor repository, and delivered feature branches through pull requests merged by teammates}
 
-    \resumeItem{Implemented 11 synchronization health checks running every 15--30 minutes, with automated reconciliation resolving $\sim$80\% of data drift and \textbf{Claude}-generated explanations of likely causes}
+    \resumeItem{Documented diagnosis and recovery steps for 13 failure scenarios, from expired API tokens to migration drift, in a system handoff guide and 9 runbooks for the team taking over the dashboard}
 
     \resumeItem{Reduced median dashboard modal load time from over three minutes to 2.8 seconds by migrating dashboard reads to \textbf{PostgreSQL} and \textbf{Redis}}
 
+    % \resumeItem{Developed \textbf{Vitest}, \textbf{Jest}, and \textbf{Cypress} tests with \textbf{PostgreSQL} integration tests through \textbf{Testcontainers}, catching 15+ regressions before production and increasing backend coverage from 50\% to 90\%}
+
     % \resumeItem{Coordinated ticket writes during rolling deployments using \textbf{Redis} distributed locks and \textbf{PostgreSQL} deadlock retries, with zero data-drift incidents across 40+ production deployments}
 
-    % \resumeItem{Automated ingestion of 10,000+ Linear and Asana tickets through \textbf{Node.js} services using \textbf{GraphQL} and \textbf{REST APIs}, with workers refreshing Linear data every 10 minutes}
+    % \resumeItem{Implemented 11 synchronization health checks running every 15--30 minutes, with automated reconciliation resolving $\sim$80\% of data drift and \textbf{Claude}-generated explanations of likely causes}
 
     % \resumeItem{Deployed a five-service dashboard platform on \textbf{Railway} using \textbf{Docker}, supporting zero-downtime releases and 99.9\% availability over the internship's final two months}
+
+    % \resumeItem{Automated ingestion of 10,000+ Linear and Asana tickets through \textbf{Node.js} services using \textbf{GraphQL} and \textbf{REST APIs}, with workers refreshing Linear data every 10 minutes}
 
     % \resumeItem{Reduced managers' ticket-history review time from five minutes to under 30 seconds by integrating \textbf{Claude}-generated summaries into Linear ticket dashboards}
 
@@ -161,17 +172,39 @@
   {Insurance Corporation of British Columbia (ICBC)}{Vancouver, BC}
   \resumeItemListStart
 
+    % FUNDAMENTAL (swap with the STLC version below; never use both)
     \resumeItem{Built 70+ \textbf{JavaScript} and \textbf{TestCafe} regression, smoke, integration, and end-to-end tests covering UI workflows and backend APIs for ICBC's cloud migration, catching 15+ regressions before production across three releases}
+
+    \resumeItem{Triaged \textbf{TestCafe} results on every \textbf{TeamCity} run, fixing failures caused by test scripts and raising \textbf{Jira} defects only for confirmed product issues}
 
     \resumeItem{Validated fixes for 18 defects across two cloud-migration releases by translating user stories into \textbf{Gherkin} and \textbf{Cucumber} scenarios and tracking failures in \textbf{Jira} with developers and product teams}
 
-    \resumeItem{Cut test development time by $\sim$40\% by integrating parallel automated tests into \textbf{TeamCity CI/CD} pipelines, running the full suite on every build instead of on local machines}
+    % \resumeItem{Cut test development time by $\sim$40\% by integrating parallel automated tests into \textbf{TeamCity CI/CD} pipelines, running the full suite on every build instead of on local machines}
+
+    % \resumeItem{Wrote manager-reviewed test plans for UI and backend API features in ICBC's insurance-platform cloud migration, used to validate the release for a production go-live}
 
     % \resumeItem{Saved the QA team 10+ hours per week by building \textbf{Python} tooling that extracts and consolidates test data from 4 sources, replacing manual cross-checks before each release}
 
-    % \resumeItem{Applied the \textbf{Software Testing Life Cycle (STLC)} to design 70+ regression, smoke, integration, and end-to-end tests in \textbf{JavaScript} and \textbf{TestCafe} for ICBC's cloud migration, catching 20+ regressions before production across three releases}
+    % FUNDAMENTAL (swap with the version above; STLC wording for QA roles)
+    % \resumeItem{Applied the \textbf{Software Testing Life Cycle (STLC)} to design 70+ regression, smoke, integration, and end-to-end tests in \textbf{JavaScript} and \textbf{TestCafe} for ICBC's cloud migration, catching 15+ regressions before production across three releases}
 
     % \resumeItem{Automated UI testing of ICBC's insurance web workflows with \textbf{TestCafe}, validating forms, navigation, and error states across user scenarios and catching 15+ UI defects before release}
+
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Ballast Control Operator}{Oct 2020 - Mar 2025}
+  {Petrobras S.A.}{Brazil}
+  \resumeItemListStart
+
+    \resumeItem{Prepared, operated, and coordinated crude oil offloading to shuttle tankers, adjusting ballast to keep the unit's draft and stability within limits as cargo transferred}
+
+    \resumeItem{Monitored ballast tanks and vessel stability (draft, trim, and heel) on an offshore oil and gas unit, coordinating operational updates with offshore teams and completing 98\% of scheduled system checks on time over 3 years}
+
+    % FUNDAMENTAL
+    \resumeItem{Automated recurring offshore operating procedures with \textbf{Python and VBA}, reducing manual data-entry errors by 15\% and saving the team 10 hours per week}
+
+    \resumeItem{Supervised four offshore operators in a safety-critical oil and gas environment, coordinating task assignments during shift changes and reducing handover delays from 25 to 5 minutes}
 
   \resumeItemListEnd
 
@@ -182,36 +215,38 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \item
+        \textbf{Fall Line} \textbar\
+        \href{https://github.com/davivargas/Fall-Line}{github.com/davivargas/Fall-Line}
+        \textbar\
+        \href{https://www.youtube.com/watch?v=Ut6WIyQr13k}{youtu.be/Ut6WIyQr13k}
+        \vspace{-4pt}
+        \resumeItemListStart
+          % FUNDAMENTAL
+          \resumeItem{Built an offline Android snowboarding tracker with \textbf{Flutter}, \textbf{Kotlin}, \textbf{FastAPI}, and \textbf{PostgreSQL}, recording 40+ hours across 25 sessions during the February--April 2026 season}
+          \resumeItem{Reduced manual build validation from 30 to 10 minutes per build by configuring \textbf{GitHub Actions} to run \textbf{pytest} and \textbf{Flutter} tests, linting, type checks, and \textbf{Alembic} migrations on every push}
+          \resumeItem{Classified snowboarding GPS tracks into runs, lifts, and stops with 92\% accuracy on 500 hand-labeled segments by building a \textbf{Python} \textbf{hidden Markov model} with Viterbi decoding over speed, vertical movement, and \textbf{OpenStreetMap} lift paths}
+          \resumeItem{Cut backend setup from $\sim$30 minutes to a single command by containerizing \textbf{FastAPI} and \textbf{PostgreSQL} with \textbf{Docker Compose} and applying \textbf{Alembic} migrations automatically on startup}
+          % \resumeItem{Retained 99\% of expected GPS samples across ten three-hour sessions by recording on-device with a \textbf{Kotlin} foreground service and \textbf{Drift} database, then batch-uploading to \textbf{FastAPI} with duplicate checks}
+          % \resumeItem{Kept ride statistics available without connectivity by structuring the \textbf{Flutter} client into presentation, domain, and data layers with \textbf{Riverpod}, computing GPS filtering and stats on-device in under one second per session}
+          % \resumeItem{Brought 100+ stored sessions up to the latest classification model with one command by versioning analysis results and adding a \textbf{Python} reanalysis CLI}
+          % \resumeItem{Imported 2,000+ ski resorts from \textbf{OpenStreetMap} data with a \textbf{Python} pipeline that preserves inactive records and routes $\sim$5\% of uncertain matches to manual review}
+      \resumeItemListEnd
+      \item
         \textbf{Java Game Suite} \textbar\
         \href{https://github.com/davivargas/COMP2522-TermProject}{github.com/davivargas/COMP2522-TermProject}
         \textbar\
         \href{https://www.youtube.com/watch?v=w8x6IFrAGjE}{youtu.be/w8x6IFrAGjE}
         \vspace{-4pt}
         \resumeItemListStart
+          % FUNDAMENTAL
           \resumeItem{Built a solo \textbf{Java} game suite of a geography quiz, a number-ordering game, and Quantum Sum, an original \textbf{JavaFX} puzzle, organized as 42 types across 7 packages behind shared game interfaces and abstract classes}
-          \resumeItem{Detected unwinnable Quantum Sum boards in milliseconds by implementing a bitmask subset-sum search with early exit over up to 25 grid cells, ending the game only when no combination reaches the dice target}
           \resumeItem{Verified move validation, grid collapse, dice distribution over 10,000 rolls, and score-file parsing with 42 \textbf{JUnit 5} tests across 9 classes, including boundary and corrupted-input cases}
-          % \resumeItem{Centralized input checks in 6 generic validators and documented all 40 source files with \textbf{Javadoc}, using immutable value classes with defensive copies to keep game state consistent}
-          % \resumeItem{Generated 10-question geography rounds from 191 countries and 573 facts by building generic \texttt{Question<K, V>} classes for three question types and a \textbf{Java NIO} file parser, with no country repeated within a round}
+          \resumeItem{Detected unwinnable Quantum Sum boards in milliseconds by implementing a bitmask subset-sum search with early exit over up to 25 grid cells, ending the game only when no combination reaches the dice target}
+          \resumeItem{Centralized input checks in 6 generic validators and documented all 40 source files with \textbf{Javadoc}, using immutable value classes with defensive copies to keep game state consistent}
           % \resumeItem{Let players relaunch \textbf{JavaFX} games from a console menu without restarting the JVM by sharing one JavaFX runtime across launches and synchronizing the console and FX threads with \textbf{CountDownLatch} and \textbf{Platform.runLater}}
+          % \resumeItem{Generated 10-question geography rounds from 191 countries and 573 facts by building generic \texttt{Question<K, V>} classes for three question types and a \textbf{Java NIO} file parser, with no country repeated within a round}
           % \resumeItem{Saved per-player Quantum Sum history with \textbf{Java NIO} and \textbf{Streams}, ranking personal and all-time bests through Comparator pipelines while skipping corrupted score lines instead of crashing}
       \resumeItemListEnd
-      % \item
-      %   \textbf{Fall Line} \textbar\
-      %   \href{https://github.com/davivargas/Fall-Line}{github.com/davivargas/Fall-Line}
-      %   \textbar\
-      %   \href{https://www.youtube.com/watch?v=Ut6WIyQr13k}{youtu.be/Ut6WIyQr13k}
-      %   \vspace{-4pt}
-      %   \resumeItemListStart
-      %     \resumeItem{Built an offline Android snowboarding tracker with \textbf{Flutter}, \textbf{Kotlin}, \textbf{FastAPI}, and \textbf{PostgreSQL}, recording 40+ hours across 25 sessions during the February--April 2026 season}
-      %     \resumeItem{Classified snowboarding GPS tracks into runs, lifts, and stops with 92\% accuracy on 500 hand-labeled segments by building a \textbf{Python} \textbf{hidden Markov model} with Viterbi decoding over speed, vertical movement, and \textbf{OpenStreetMap} lift paths}
-      %     \resumeItem{Retained 99\% of expected GPS samples across ten three-hour sessions by recording on-device with a \textbf{Kotlin} foreground service and \textbf{Drift} database, then batch-uploading to \textbf{FastAPI} with duplicate checks}
-      %     \resumeItem{Reduced manual build validation from 30 to 10 minutes per build by configuring \textbf{GitHub Actions} to run \textbf{pytest} and \textbf{Flutter} tests, linting, type checks, and \textbf{Alembic} migrations on every push}
-      %     \resumeItem{Cut backend setup from $\sim$30 minutes to a single command by containerizing \textbf{FastAPI} and \textbf{PostgreSQL} with \textbf{Docker Compose} and applying \textbf{Alembic} migrations automatically on startup}
-      %     \resumeItem{Kept ride statistics available without connectivity by structuring the \textbf{Flutter} client into presentation, domain, and data layers with \textbf{Riverpod}, computing GPS filtering and stats on-device in under one second per session}
-      %     \resumeItem{Brought 100+ stored sessions up to the latest classification model with one command by versioning analysis results and adding a \textbf{Python} reanalysis CLI}
-      %     \resumeItem{Imported 2,000+ ski resorts from \textbf{OpenStreetMap} data with a \textbf{Python} pipeline that preserves inactive records and routes $\sim$5\% of uncertain matches to manual review}
-      % \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 
@@ -221,6 +256,9 @@
     \resumeSubheading
       {British Columbia Institute of Technology}{Expected December 2026}
       {Computer Systems Technology Diploma $|$ \textup{GPA: 4.0/4.0 (BCIT GPA 95\%)}}{Vancouver, BC}
+      \resumeItemListStart
+        \resumeItem{Completed a cloud computing course project using 17 \textbf{AWS} services, covering \textbf{Kubernetes} container orchestration and observability}
+      \resumeItemListEnd
     \resumeSubheading
       {Universidade Federal do Espirito Santo}{Graduated January 2021}
       {Bachelor's in Mechanical Engineering}{Brazil}
@@ -231,11 +269,12 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Java, TypeScript, JavaScript, Python, SQL} \\
-     \textbf{Frameworks}{: React.js, Node.js, JavaFX, Jest, Vitest, JUnit, TestCafe, Cucumber, Gherkin} \\
-     \textbf{Developer Tools}{: Git, Docker, AWS, CI/CD (TeamCity and GitHub Actions), Testcontainers, Linux, Shell, Jira, AI Coding Agents (Claude Code), Anthropic Claude API} \\
-     \textbf{Databases}{: PostgreSQL, Redis, IndexedDB} \\
-     \textbf{Concepts}{: Object Oriented Programming, Data Structures and Algorithms, REST APIs, Agile Methodology, SDLC}
+     \textbf{Languages}{: TypeScript, JavaScript, Python, SQL, Java, Kotlin, VBA} \\
+     \textbf{Frameworks}{: React.js, Node.js, Flutter, FastAPI, JavaFX, pytest, JUnit, TestCafe, pgTAP} \\
+     \textbf{Developer Tools}{: Git, GitHub, Docker, Docker Compose, AWS, Kubernetes (foundational), CI/CD (GitHub Actions, TeamCity), Linux, Shell, Jira, Javadoc, AI Coding Agents (Claude Code)} \\
+     \textbf{Databases}{: SQL (PostgreSQL), NoSQL (Redis), IndexedDB, Database Migrations (Alembic), OpenStreetMap Data} \\
+     \textbf{Concepts}{: REST \& GraphQL API Design, Object Oriented Programming, Data Structures and Algorithms, Automated, Regression, Integration and End-to-End Testing, Code Review and Pull Requests, Secure Coding (JWT Authentication, Row-Level Security), Technical Documentation, Observability, Containerization, Progressive Web Apps (PWA), Hidden Markov Models, Agile Methodology} \\
+     \textbf{Engineering Domain}{: Offshore Oil and Gas Operations, Ballast and Vessel Stability Systems, Mechanical Engineering}
     }}
  \end{itemize}
 
