@@ -50,7 +50,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% Ensure that generated PDF is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
@@ -99,11 +99,6 @@
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
     \textbf{\Huge \scshape Davi Vargas} \\ \vspace{1pt}
     \small \href{https://davivargas.github.io/portfolio/}{\underline{Portfolio}} $|$
@@ -144,16 +139,6 @@
 
     \resumeItem{Coordinated ticket writes during rolling deployments using \textbf{Redis} distributed locks and \textbf{PostgreSQL} deadlock retries, with zero data-drift incidents across 40+ production deployments}
 
-    % \resumeItem{Developed \textbf{Vitest}, \textbf{Jest}, and \textbf{Cypress} tests with \textbf{PostgreSQL} integration tests through \textbf{Testcontainers}, catching 15+ regressions before production and increasing backend coverage from 50\% to 90\%}
-
-    % \resumeItem{Deployed a five-service dashboard platform on \textbf{Railway} using \textbf{Docker}, supporting zero-downtime releases and 99.9\% availability over the internship's final two months}
-
-    % \resumeItem{Implemented 11 synchronization health checks running every 15--30 minutes, with automated reconciliation resolving $\sim$80\% of data drift and \textbf{Claude}-generated explanations of likely causes}
-
-    % \resumeItem{Reduced managers' ticket-history review time from five minutes to under 30 seconds by integrating \textbf{Claude}-generated summaries into Linear ticket dashboards}
-
-    % \resumeItem{Replaced two days of quarterly spreadsheet work with a one-click \textbf{Excel} export for 20+ contractors, using ZipHQ's fiscal calendar and formulas that recalculate costs when rates change}
-
   \resumeItemListEnd
 
 \resumeSubheading
@@ -163,11 +148,9 @@
 
     \resumeItem{Saved the QA team 10+ hours per week by building \textbf{Python} tooling that extracts and consolidates test data from 4 sources, replacing manual cross-checks before each release}
 
-    \resumeItem{Built 70+ \textbf{JavaScript} and \textbf{TestCafe} regression, smoke, integration, and end-to-end tests covering UI workflows and backend APIs for ICBC's cloud migration, catching 30+ regressions before production across three releases}
+    \resumeItem{Built 70+ \textbf{JavaScript} and \textbf{TestCafe} regression, smoke, integration, and end-to-end tests covering UI workflows and backend APIs for ICBC's cloud migration, catching 15+ regressions before production across three releases}
 
     \resumeItem{Cut test development time by $\sim$40\% by integrating parallel automated tests into \textbf{TeamCity CI/CD} pipelines, running the full suite on every build instead of on local machines}
-
-    % \resumeItem{Validated fixes for 18 defects across two cloud-migration releases by translating user stories into \textbf{Gherkin} and \textbf{Cucumber} scenarios and tracking failures in \textbf{Jira} with developers and product teams}
 
   \resumeItemListEnd
 
@@ -187,9 +170,6 @@
           \resumeItem{Built an offline Android snowboarding tracker with \textbf{Flutter}, \textbf{Kotlin}, \textbf{FastAPI}, and \textbf{PostgreSQL}, recording 40+ hours across 25 sessions during the February--April 2026 season}
           \resumeItem{Classified snowboarding GPS tracks into runs, lifts, and stops with 92\% accuracy on 500 hand-labeled segments by building a \textbf{Python} \textbf{hidden Markov model} with Viterbi decoding over speed, vertical movement, and \textbf{OpenStreetMap} lift paths}
           \resumeItem{Retained 99\% of expected GPS samples across ten three-hour sessions by recording on-device with a \textbf{Kotlin} foreground service and \textbf{Drift} database, then batch-uploading to \textbf{FastAPI} with duplicate checks}
-          % \resumeItem{Reduced manual build validation from 30 to 10 minutes per build by configuring \textbf{GitHub Actions} to run \textbf{pytest} and \textbf{Flutter} tests, linting, type checks, and \textbf{Alembic} migrations on every push}
-          % \resumeItem{Cut backend setup from $\sim$30 minutes to a single command by containerizing \textbf{FastAPI} and \textbf{PostgreSQL} with \textbf{Docker Compose} and applying \textbf{Alembic} migrations automatically on startup}
-          % \resumeItem{Kept ride statistics available without connectivity by structuring the \textbf{Flutter} client into presentation, domain, and data layers with \textbf{Riverpod}, computing GPS filtering and stats on-device in under one second per session}
       \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -210,11 +190,11 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: TypeScript, JavaScript, Python, SQL, Java, Dart, HTML/CSS, Kotlin} \\
-     \textbf{Frameworks}{: React.js, Node.js, Flutter, FastAPI, Prisma ORM, Playwright, TestCafe, Selenium} \\
-     \textbf{Developer Tools}{: Git, Docker, AWS, CI/CD (TeamCity and GitHub Actions), Linux, Shell, Jira, AI Coding Agents (Claude Code)} \\
-     \textbf{Databases}{: SQL (PostgreSQL, MySQL, Supabase), NoSQL (Redis, Firebase), IndexedDB} \\
-     \textbf{Concepts}{: REST \& GraphQL API Design, Progressive Web Apps (PWA), Object Oriented Programming, Data Structures and Algorithms, Agile Methodology, SDLC}
+     \textbf{Languages}{: TypeScript, JavaScript, Python, SQL, Java, Kotlin} \\
+     \textbf{Frameworks}{: React.js, Node.js, Flutter, FastAPI, Vitest, Jest, Playwright, TestCafe} \\
+     \textbf{Developer Tools}{: Git, Docker, AWS, CI/CD (GitHub Actions and TeamCity), Linux, Shell, Jira, AI Coding Agents (Claude Code)} \\
+     \textbf{Databases}{: PostgreSQL, Redis, IndexedDB, Database Migrations (Prisma and Alembic)} \\
+     \textbf{Concepts}{: REST \& GraphQL API Design, Progressive Web Apps (PWA), Object-Oriented Programming, Data Structures and Algorithms, Agile Methodology}
     }}
  \end{itemize}
 
