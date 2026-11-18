@@ -16,7 +16,7 @@ export const Sidebar = () => {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-3 flex items-center gap-2">
               <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
-              hello, world
+              hello, Adrian
             </p>
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight">
               Davi Vargas
