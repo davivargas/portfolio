@@ -1,0 +1,10 @@
+# CodeBuild project: portfolio-invalidate (pipeline Invalidate stage, after Deploy).
+# Clears the CloudFront cache so the freshly deployed files are served immediately.
+# Requires the DISTRIBUTION_ID environment variable on the CodeBuild project and
+# cloudfront:CreateInvalidation on its service role.
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"

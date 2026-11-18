@@ -1,0 +1,23 @@
+# CodeBuild project: portfolio-build (pipeline Build stage).
+# Produces the static site in dist/ as the BuildArtifact for the S3 deploy action.
+# BASE_PATH stays unset: CloudFront serves the site from the root.
+# The resume PDF is committed under public/, so no LaTeX step is needed here.
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - npm ci
+  build:
+    commands:
+      - npm run build
+      # Fallback copy for hosts that serve a 404 document; CloudFront's custom
+      # error response to /index.html is the primary SPA routing fix.
+      - cp dist/index.html dist/404.html
+
+artifacts:
+  base-directory: dist
+  files:
+    - '**/*'
